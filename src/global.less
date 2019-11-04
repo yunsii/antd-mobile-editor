@@ -1,0 +1,51 @@
+@import '~antd-mobile/lib/style/themes/default.less';
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+body {
+  margin: 0;
+
+  /* IOS 禁止微信调整字体大小 */
+	-webkit-text-size-adjust: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+// symbol icon style
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  color: @brand-primary;
+}
+
+// router animation
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-exit.fade-exit-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}

@@ -1,0 +1,74 @@
+{
+  "name": "antd-mobile-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gaea-editor for ant design mobile",
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "test": "umi test",
+    "lint:es": "eslint --ext .js src mock tests",
+    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.3.1",
+    "classnames": "^2.2.6",
+    "dva": "^2.6.0-beta.6",
+    "gaea-editor": "^2.3.26",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "nzh": "^1.0.4",
+    "qs": "^6.7.0",
+    "rc-form": "^2.4.8",
+    "react": "^16.8.6",
+    "react-amap": "^1.2.8",
+    "react-amap-plugin-custom-geolocation": "^1.0.1",
+    "react-dom": "^16.8.6",
+    "react-transition-group": "^4.2.2",
+    "umi-request": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.12",
+    "@types/qs": "^6.5.3",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-test-renderer": "^16.0.3",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-import": "^1.12.0",
+    "eslint": "^5.4.0",
+    "eslint-config-umi": "^1.4.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.2",
+    "react-test-renderer": "^16.7.0",
+    "roadhog-api-doc": "^1.1.2",
+    "tslint": "^5.12.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "umi": "^2.7.0",
+    "umi-plugin-react": "^1.8.0",
+    "umi-types": "^0.3.17"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
