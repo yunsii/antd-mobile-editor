@@ -2,13 +2,13 @@ import React from 'react';
 import Editor from 'gaea-editor';
 // import BasicComponents from 'gaea-basic-components';
 import { Div } from '@/components/Container';
-import { Button } from '@/components/AntdMobile';
+import { WhiteSpace, Button, Grid } from '@/components/AntdMobile';
 
 export default function Welcome() {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <Editor
-        componentClasses={[Div, Button]}
+        componentClasses={[Div, WhiteSpace, Button, Grid]}
         onSave={(value) => {
           console.log(value);
         }}
