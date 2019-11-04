@@ -1,7 +1,7 @@
 export class Props {
   public editSetting = {
-    key: 'm-button',
-    name: 'M-Button',
+    key: 'button',
+    name: 'Button',
     editors: [
       'Layout',
       {

@@ -1,14 +1,14 @@
-import { Button as AntButton } from 'antd-mobile';
+import { Button } from 'antd-mobile';
 import * as React from 'react';
 import { Props, State } from './type';
 
-export default class Button extends React.Component<Props, State> {
+export default class extends React.Component<Props, State> {
   public static defaultProps = new Props();
   public state = new State();
 
   public render() {
     return (
-      <AntButton
+      <Button
         className={this.props.className}
         inline={this.props.inline}
         icon={this.props.icon || undefined}
@@ -22,7 +22,7 @@ export default class Button extends React.Component<Props, State> {
         onClick={this.props.onClick}
       >
         {this.props.text}
-      </AntButton >
+      </Button>
     );
   }
 }
