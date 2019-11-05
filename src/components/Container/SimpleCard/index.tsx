@@ -12,7 +12,6 @@ export interface SimpleCardProps {
 
 export default (props: SimpleCardProps) => {
   const { title, extra, style, className, children } = props;
-  console.log(children);
   return (
     <div style={style} className={classNames(styles.wrapper, className)}>
       <div className={styles.header}>
