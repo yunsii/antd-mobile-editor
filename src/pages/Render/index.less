@@ -1,0 +1,62 @@
+@import '~antd-mobile/lib/style/themes/default.less';
+
+.container {
+	position: relative;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+}
+
+.operations {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 0;
+	border-bottom: 1PX solid rgba(0, 0, 0, 0.2);
+}
+
+.displayDimension {
+	margin-bottom: unset;
+	margin-left: 20 * @hd;
+}
+
+.window {
+	margin: 60 * @hd auto;
+	box-shadow: 0 0 16 * @hd 4 * @hd rgba(0, 0, 0, 0.1);
+	transition: all .5s;
+	overflow: auto;
+	cursor: url('/dot-circle-o.png'), pointer;
+
+	&::-webkit-scrollbar {
+		color: red;
+		width: 3px;
+		height: 100vh;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #bfbfbf;
+	}
+}
+
+.iphone678 {
+	width: 375 * @hd;
+	height: 667 * @hd;
+	max-height: 667 * @hd;
+}
+
+.iphoneX {
+	width: 375 * @hd;
+	height: 812 * @hd;
+	max-height: 812 * @hd;
+}
+
+.ipad {
+	width: 768 * @hd;
+	height: 1024 * @hd;
+	max-height: 1024 * @hd;
+}

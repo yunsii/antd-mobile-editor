@@ -5,7 +5,11 @@ export default [
     routes: [
       {
         path: '/',
-        component: './Welcome',
+        component: './Editor',
+      },
+      {
+        path: '/render',
+        component: './Render',
       },
       {
         path: '/demo',
