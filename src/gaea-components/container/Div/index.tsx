@@ -6,6 +6,6 @@ export default class Container extends React.Component<Props, State> {
   public state = new State();
 
   public render() {
-    return <div style={this.props.style}>{this.props.children}</div>;
+    return <div style={{ backgroundColor: '#f5f5f9', ...this.props.style }}>{this.props.children}</div>;
   }
 }
