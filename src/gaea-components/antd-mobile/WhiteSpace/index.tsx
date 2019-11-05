@@ -1,5 +1,5 @@
-import { WhiteSpace } from 'antd-mobile';
 import * as React from 'react';
+import { WhiteSpace } from 'antd-mobile';
 import { Props, State } from './type';
 
 export default class extends React.Component<Props, State> {
