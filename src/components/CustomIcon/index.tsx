@@ -1,5 +1,7 @@
 // @flow 
 import * as React from 'react';
+import styles from './index.less';
+
 type Props = {
   type: string;
   style?: React.CSSProperties;
@@ -7,8 +9,8 @@ type Props = {
 const CustomIcon = (props: Props) => {
   const { type, ...rest } = props;
   return (
-    <svg className="icon" aria-hidden="true" {...rest}>
-      <use xlinkHref={`#icon-${type}`}/>
+    <svg className={styles.icon} aria-hidden="true" {...rest}>
+      <use xlinkHref={`#icon-${type}`} />
     </svg>
   );
 };
