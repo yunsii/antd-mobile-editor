@@ -4,8 +4,9 @@ import _forOwn from 'lodash/forOwn';
 import _cloneDeep from 'lodash/cloneDeep';
 import _omit from 'lodash/omit';
 import _isUndefined from 'lodash/isUndefined';
+import _upperFirst from 'lodash/upperFirst';
 
-const transferMap = [
+const transferMap: { configKey: InjectField, injectKey: string }[] = [
   {
     configKey: 'dataSource',
     injectKey: 'data',
@@ -40,4 +41,21 @@ export function injectConfig(renderJson: { [k: string]: InstanceInfo }, config: 
   });
   // console.log(result);
   return result;
+}
+
+export type InjectField = 'dataSource' | 'handleClick';
+
+export function addInjectToEditor(fields?: InjectField[]) {
+  const configProperties = transferMap.map(item => {
+    return {
+      type: 'string',
+      field: item.configKey,
+      text: _upperFirst(item.configKey),
+    }
+  });
+
+  return [
+    'Inject',
+    ...configProperties.filter(item => fields ? fields.includes(item.field) : true)
+  ]
 }
