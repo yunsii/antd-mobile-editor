@@ -27,6 +27,7 @@ export default function Welcome() {
             state: value,
           });
         }}
+        defaultValue={localStorage.getItem('gaea-draft') ? JSON.parse(localStorage.getItem('gaea-draft') as string) : undefined}
       />
     </div>
   )
