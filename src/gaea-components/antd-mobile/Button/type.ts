@@ -3,9 +3,11 @@ export class Props {
     key: 'button',
     name: 'Button',
     editors: [
-      'Layout',
+      'Inject',
       {
-        type: 'box-editor'
+        type: 'string',
+        field: 'handleClick',
+        text: 'HandleClick',
       },
       'Function',
       {
@@ -68,12 +70,6 @@ export class Props {
         ]
       }
     ],
-    events: [
-      {
-        text: 'OnClick',
-        field: 'onClick'
-      }
-    ]
   };
 
   public className: string | undefined;

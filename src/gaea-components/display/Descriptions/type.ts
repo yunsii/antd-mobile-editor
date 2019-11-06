@@ -4,9 +4,11 @@ export class Props {
     key: 'descriptions',
     name: 'Descriptions',
     editors: [
-      'Layout',
+      'Inject',
       {
-        type: 'box-editor'
+        type: 'string',
+        field: 'dataSource',
+        text: 'DataSource',
       },
       'Function',
       {

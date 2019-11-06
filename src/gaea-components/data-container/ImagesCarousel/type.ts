@@ -3,9 +3,11 @@ export class Props {
     key: 'images-carousel',
     name: 'ImagesCarousel',
     editors: [
-      'Layout',
+      'Inject',
       {
-        type: 'box-editor'
+        type: 'string',
+        field: 'dataSource',
+        text: 'DataSource',
       },
       'Function',
       {
