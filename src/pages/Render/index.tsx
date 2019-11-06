@@ -4,11 +4,29 @@ import withRouter from 'umi/withRouter';
 import { Location } from 'history';
 import Render from 'gaea-render';
 // import BasicComponents from 'gaea-basic-components';
+import CustomIcon from '@/components/CustomIcon';
 import { Div, SimpleCard } from '@/gaea-components/container';
 import { ImagesCarousel } from '@/gaea-components/data-container';
 import { Descriptions } from '@/gaea-components/display';
 import { WhiteSpace, Button, Grid } from '@/gaea-components/antd-mobile';
+import { injectConfig } from '@/utils/gaea';
 import styles from './index.less';
+
+const pageConfig = {
+  menus: [
+    {
+      text: '菜单一',
+      icon: <CustomIcon type='empty' />,
+    },
+    {
+      text: '菜单二',
+      icon: <CustomIcon type='empty' />,
+    },
+  ],
+  handleMenusClick: (item) => {
+    console.log(item);
+  }
+}
 
 const dimensionMap = {
   iphone678: '375 x 667',
@@ -23,6 +41,9 @@ export interface RenderPageProps {
 function RenderPage(props: RenderPageProps) {
   const { location } = props;
   const [selected, setSelected] = useState('iphone678');
+  const renderJson = location.state;
+
+  localStorage.setItem('gaea-draft', JSON.stringify(renderJson));
 
   const onSelect = (event: any) => {
     setSelected(event.target.value);
@@ -51,7 +72,7 @@ function RenderPage(props: RenderPageProps) {
             SimpleCard,
             WhiteSpace,
           ]}
-          value={location.state}
+          value={injectConfig(renderJson, pageConfig)}
         />
       </div>
     </div>

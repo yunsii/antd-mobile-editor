@@ -3,9 +3,16 @@ export class Props {
     key: 'grid',
     name: 'Grid',
     editors: [
-      'Layout',
+      'Inject',
       {
-        type: 'box-editor'
+        type: 'string',
+        field: 'dataSource',
+        text: 'DataSource',
+      },
+      {
+        type: 'string',
+        field: 'handleClick',
+        text: 'HandleClick',
       },
       'Function',
       {
@@ -49,12 +56,6 @@ export class Props {
         type: 'boolean',
       },
     ],
-    events: [
-      {
-        text: 'OnClick',
-        field: 'onClick'
-      }
-    ]
   };
 
   public data: any[] = [{
