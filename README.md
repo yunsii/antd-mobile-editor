@@ -53,6 +53,7 @@ public editSetting = {
 ```tsx
 import Render from 'gaea-render';
 import { Grid } from '@/gaea-components/antd-mobile';
+import { injectConfig } from '@/utils/gaea';
 
 const pageConfig = {
   menus: [
