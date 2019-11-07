@@ -23,7 +23,7 @@ const Loading: React.FC<{}> = () => {
   )
 }
 
-const CustomResult: React.FC<ResultProps> = ({...props}) => {
+export const CustomResult: React.FC<ResultProps> = ({...props}) => {
   return <Result style={{ border: 'unset' }} {...props} />
 }
 
