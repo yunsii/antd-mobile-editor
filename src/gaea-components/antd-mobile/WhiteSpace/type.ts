@@ -1,7 +1,7 @@
 export class Props {
   public editSetting = {
     key: 'white-space',
-    name: 'WhiteSpace',
+    name: 'WhiteSpace - 上下留白',
     editors: [
       'Layout',
       {

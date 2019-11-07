@@ -5,7 +5,7 @@ export type ImagesCarouselData = string[];
 export class Props {
   public editSetting = {
     key: 'images-carousel',
-    name: 'ImagesCarousel',
+    name: 'ImagesCarousel - 图片轮播',
     editors: [
       ...addInjectToEditor(['dataSource']),
       'Function',

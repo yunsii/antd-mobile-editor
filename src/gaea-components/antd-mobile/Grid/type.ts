@@ -8,7 +8,7 @@ export type GirdData = {
 export class Props {
   public editSetting = {
     key: 'grid',
-    name: 'Grid',
+    name: 'Grid - 宫格',
     editors: [
       ...addInjectToEditor(),
       'Function',

@@ -3,7 +3,7 @@ import { addInjectToEditor } from '@/utils/gaea';
 export class Props {
   public editSetting = {
     key: 'button',
-    name: 'Button',
+    name: 'Button - 按钮',
     editors: [
       ...addInjectToEditor(['handleClick']),
       'Function',

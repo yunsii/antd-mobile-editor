@@ -5,7 +5,7 @@ export type DescriptionsData = { label: string, value: string }[]
 export class Props {
   public editSetting = {
     key: 'descriptions',
-    name: 'Descriptions',
+    name: 'Descriptions - 描述字段',
     editors: [
       'Inject',
       {

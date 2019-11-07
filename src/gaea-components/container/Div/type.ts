@@ -1,7 +1,7 @@
 export class Props {
   public editSetting = {
     key: 'gaea-container',
-    name: 'Container',
+    name: 'Div - 容器',
     isContainer: true,
     editors: [
       'Layout',
@@ -38,4 +38,4 @@ export class Props {
   };
 }
 
-export class State {}
+export class State { }

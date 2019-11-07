@@ -1,7 +1,7 @@
 export class Props {
   public editSetting = {
     key: 'simple-card',
-    name: 'SimpleCard',
+    name: 'SimpleCard - 简单卡片',
     isContainer: true,
     editors: [
       'Function',
