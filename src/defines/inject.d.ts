@@ -12,3 +12,7 @@ declare type InjectPropsValue =
 declare interface InjectProps {
   [k: string]: InjectPropsValue;
 }
+
+declare interface RenderJson {
+  [k: string]: InstanceInfo;
+}
