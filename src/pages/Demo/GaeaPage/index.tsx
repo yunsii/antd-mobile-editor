@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Render from 'gaea-render';
-import request from 'umi-request';
 import { ActivityIndicator } from 'antd-mobile';
 import CustomIcon from '@/components/CustomIcon';
 import { Div, SimpleCard } from '@/gaea-components/container';
@@ -9,6 +8,7 @@ import { Descriptions } from '@/gaea-components/display';
 import { WhiteSpace, Button, Grid } from '@/gaea-components/antd-mobile';
 import { injectPropsToUI } from '@/utils/gaea';
 import { InjectProps } from '@/defines/inject';
+import renderJson from '@/assets/gaea-json/gaeaPage.json';
 
 const pageConfig: InjectProps = {
   menus: [
@@ -43,17 +43,12 @@ export interface GaeaPageProps {
 
 function GaeaPage(props: GaeaPageProps) {
   const { getData = () => { } } = props;
-  const [renderJson, setRenderJson] = useState<{ [k: string]: InstanceInfo }>({});
   const [pageProps, setPageProps] = useState();
   const [renderRef, setRenderRef] = useState();
 
-  useEffect(() => {
-    const getJson = async () => {
-      const response = await request.get('/json/gaeaPage.json');
-      setRenderJson(response);
-    }
-    getJson();
+  getData(renderJson, pageConfig);
 
+  useEffect(() => {
     setTimeout(() => {
       setPageProps(pageConfig);
     }, 2000)
@@ -64,15 +59,13 @@ function GaeaPage(props: GaeaPageProps) {
   //     console.log('call forceUpdate');
   //     renderRef.forceUpdate();
   //   }
-  // }, [renderJson, pageProps, renderRef])
+  // }, [pageProps, renderRef])
 
-  getData(renderJson, pageConfig);
 
-  if (!Object.keys(renderJson).length || !pageProps) {
+  if (!pageProps) {
     return <ActivityIndicator toast animating />
   }
 
-  console.log(renderJson, pageProps)
   return (
     <Render
       componentClasses={[
