@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Result } from 'antd-mobile';
+import { ResultProps } from 'antd-mobile/lib/result'
 import _repeat from 'lodash/repeat';
 
 const Loading: React.FC<{}> = () => {
@@ -22,6 +23,10 @@ const Loading: React.FC<{}> = () => {
   )
 }
 
+const CustomResult: React.FC<ResultProps> = ({...props}) => {
+  return <Result style={{ border: 'unset' }} {...props} />
+}
+
 export interface AsyncRenderProps<T = any> extends React.PropsWithoutRef<React.Props<T>> {
   loading: boolean;
   data: T | T[];
@@ -30,10 +35,10 @@ export interface AsyncRenderProps<T = any> extends React.PropsWithoutRef<React.P
 
 export function DataLoading<T>({ loading, data, children }: AsyncRenderProps<T>): React.ReactElement {
   if (loading) {
-    return <Result message={<Loading />} />;
+    return <CustomResult message={<Loading />} />;
   }
   if ((Array.isArray(data) && !data.length) || !Object.keys(data).length) {
-    return <Result message='暂无数据' />;
+    return <CustomResult message='暂无数据' />;
   }
   return children;
 }
