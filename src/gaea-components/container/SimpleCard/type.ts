@@ -4,10 +4,6 @@ export class Props {
     name: 'SimpleCard',
     isContainer: true,
     editors: [
-      'Layout',
-      {
-        type: 'box-editor'
-      },
       'Function',
       {
         type: 'string',
