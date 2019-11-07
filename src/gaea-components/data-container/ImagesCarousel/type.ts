@@ -1,5 +1,7 @@
 import { addInjectToEditor } from '@/utils/gaea';
 
+export type ImagesCarouselData = string[];
+
 export class Props {
   public editSetting = {
     key: 'images-carousel',
@@ -16,7 +18,7 @@ export class Props {
     ],
   };
 
-  public images: string[] | [] = ['https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png'];
+  public images: ImagesCarouselData = ['https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png'];
 }
 
 export class State { }

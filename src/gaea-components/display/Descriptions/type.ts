@@ -1,4 +1,7 @@
 import { textAlignData } from '@/gaea-components/config/select'
+
+export type DescriptionsData = { label: string, value: string }[]
+
 export class Props {
   public editSetting = {
     key: 'descriptions',
@@ -63,7 +66,7 @@ export class Props {
     ],
   };
 
-  public data: { label: string, value: string }[] = [{ label: 'Lable', value: 'Value' }];
+  public data: DescriptionsData = [{ label: 'Lable', value: 'Value' }];
   public labelAlign: React.CSSProperties['textAlign'] = 'end';
   public valueAlign: React.CSSProperties['textAlign'] = 'unset';
   public labelFlex: number = 1;

@@ -1,5 +1,10 @@
 import { addInjectToEditor } from '@/utils/gaea';
 
+export type GirdData = {
+  text: string;
+  icon: any;
+}[];
+
 export class Props {
   public editSetting = {
     key: 'grid',
@@ -50,7 +55,7 @@ export class Props {
     ],
   };
 
-  public data: any[] = [{
+  public data: GirdData = [{
     text: 'name', icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png'
   }];
   public columnNum: number = 4;
