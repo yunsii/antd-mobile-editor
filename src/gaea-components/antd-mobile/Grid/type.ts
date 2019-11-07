@@ -66,6 +66,7 @@ export class Props {
   public isCarousel: boolean = false;
   public carouselMaxRow: number = 2;
   public square: boolean = true;
+  public loading: boolean = false;
   public onClick = () => {
     //
   };
