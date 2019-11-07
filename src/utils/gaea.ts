@@ -6,10 +6,16 @@ import _omit from 'lodash/omit';
 import _isUndefined from 'lodash/isUndefined';
 import _upperFirst from 'lodash/upperFirst';
 
+export type InjectField = 'dataSource' | 'dataLoading' | 'handleClick';
+
 const transferMap: { configKey: InjectField, injectKey: string }[] = [
   {
     configKey: 'dataSource',
     injectKey: 'data',
+  },
+  {
+    configKey: 'dataLoading',
+    injectKey: 'loading',
   },
   {
     configKey: 'handleClick',
@@ -42,8 +48,6 @@ export function injectConfig(renderJson: { [k: string]: InstanceInfo }, config: 
   // console.log(result);
   return result;
 }
-
-export type InjectField = 'dataSource' | 'handleClick';
 
 export function addInjectToEditor(fields?: InjectField[]) {
   const configProperties = transferMap.map(item => {

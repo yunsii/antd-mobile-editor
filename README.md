@@ -19,6 +19,7 @@
 当前注入属性映射为：
 
 * dataSource => data
+* dataLoading => loading
 * handleClick => onClick
 
 举例说明：
