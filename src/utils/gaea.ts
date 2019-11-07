@@ -8,7 +8,7 @@ import _upperFirst from 'lodash/upperFirst';
 
 export type InjectField = 'dataSource' | 'dataLoading' | 'handleClick';
 
-const transferMap: { configKey: InjectField, injectKey: string }[] = [
+export const transferMap: { configKey: InjectField, injectKey: string }[] = [
   {
     configKey: 'dataSource',
     injectKey: 'data',
@@ -23,7 +23,7 @@ const transferMap: { configKey: InjectField, injectKey: string }[] = [
   },
 ]
 
-export function injectConfig(renderJson: { [k: string]: InstanceInfo }, config: any) {
+export function injectPropsToUI(renderJson: { [k: string]: InstanceInfo }, config: any = {}) {
   const result = _cloneDeep(renderJson);
 
   // 遍历每个实例
@@ -45,7 +45,7 @@ export function injectConfig(renderJson: { [k: string]: InstanceInfo }, config: 
       _set(value, 'data.props', newProps);
     }
   });
-  // console.log(result);
+  console.log(result);
   return result;
 }
 
