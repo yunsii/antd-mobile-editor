@@ -23,6 +23,7 @@ const pageConfig = {
       icon: <CustomIcon type='empty' />,
     },
   ],
+  menusLoading: true,
   handleMenusClick: (item) => {
     console.log(item);
   }
