@@ -3,15 +3,28 @@ import { Modal } from 'antd-mobile';
 import { ModalProps } from 'antd-mobile/lib/modal/Modal';
 
 export interface CustomModalProps extends ModalProps {
-  children: any;
+  children: React.ReactNode;
 }
 
-export default function CustomModal(props: CustomModalProps) {
+export function SlideUpModal(props: CustomModalProps) {
   const { children, ...rest } = props;
   return (
     <Modal
       popup
       animationType='slide-up'
+      {...rest}
+    >
+      {children}
+    </Modal>
+  );
+}
+
+export function PopupModal(props: CustomModalProps) {
+  const { children, ...rest } = props;
+  return (
+    <Modal
+      transparent
+      closable
       {...rest}
     >
       {children}
