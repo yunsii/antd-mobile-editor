@@ -41,7 +41,7 @@ export interface RenderPageProps {
 function RenderPage(props: RenderPageProps) {
   const { location } = props;
   const [selected, setSelected] = useState('iphone678');
-  const renderJson = location.state;
+  const renderJson: { [k: string]: InstanceInfo } = location.state;
 
   localStorage.setItem('gaea-draft', JSON.stringify(renderJson));
 

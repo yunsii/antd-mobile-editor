@@ -1,14 +1,11 @@
+import { addInjectToEditor } from '@/utils/gaea';
+
 export class Props {
   public editSetting = {
     key: 'button',
     name: 'Button',
     editors: [
-      'Inject',
-      {
-        type: 'string',
-        field: 'handleClick',
-        text: 'HandleClick',
-      },
+      ...addInjectToEditor(['handleClick']),
       'Function',
       {
         field: 'text',
