@@ -1,18 +1,23 @@
 @import '~antd-mobile/lib/style/themes/default.less';
 
 .container {
-	position: relative;
 	display: flex;
 	width: 100vw;
 	height: 100vh;
 	justify-content: center;
 }
 
+.part {
+	position: relative;
+	height: 100vh;
+	overflow: auto;
+}
+
 .operations {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -25,19 +30,17 @@
 	margin-left: 20 * @hd;
 }
 
-.part {
-	width: 50vw;
-	height: calc(100vh - 28 * @hd);
-	margin-top: 28 * @hd;
-	overflow: auto;
-}
-
 .partLeft {
+	width: 30vw;
 	border-right: 2px solid @border-color-base;
 }
 
+.partRight {
+	width: 70vw;
+}
+
 .window {
-	margin: 60 * @hd auto;
+	margin: 80 * @hd auto;
 	box-shadow: 0 0 16 * @hd 4 * @hd rgba(0, 0, 0, 0.1);
 	transition: all .5s;
 	overflow: auto;

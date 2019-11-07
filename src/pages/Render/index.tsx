@@ -24,12 +24,12 @@ function RenderPage(props: RenderPageProps) {
 
   return (
     <div className={styles.container}>
-      <Operations selected={selected} onSelect={onSelect} />
       <div style={{ display: 'flex' }}>
         <div className={classNames(styles.part, styles.partLeft)}>
           <InjectFieldsView renderJson={renderJson} injectProps={pageProps} />
         </div>
-        <div className={styles.part}>
+        <div className={classNames(styles.part, styles.partRight)}>
+          <Operations selected={selected} onSelect={onSelect} />
           <div className={classNames(styles.window, styles[selected])}>
             <GaeaPage
               getData={(json, pageProps) => {
