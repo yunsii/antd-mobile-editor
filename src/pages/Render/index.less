@@ -17,12 +17,23 @@
 	justify-content: center;
 	align-items: center;
 	padding: 2px 0;
-	border-bottom: 1PX solid rgba(0, 0, 0, 0.2);
+	border-bottom: 2px solid @border-color-base;
 }
 
 .displayDimension {
 	margin-bottom: unset;
 	margin-left: 20 * @hd;
+}
+
+.part {
+	width: 50vw;
+	height: calc(100vh - 28 * @hd);
+	margin-top: 28 * @hd;
+	overflow: auto;
+}
+
+.partLeft {
+	border-right: 2px solid @border-color-base;
 }
 
 .window {
