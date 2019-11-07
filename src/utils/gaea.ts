@@ -5,6 +5,7 @@ import _cloneDeep from 'lodash/cloneDeep';
 import _omit from 'lodash/omit';
 import _isUndefined from 'lodash/isUndefined';
 import _upperFirst from 'lodash/upperFirst';
+import { RenderJson } from '@/defines/inject';
 
 export type InjectField = 'dataSource' | 'dataLoading' | 'handleClick';
 
@@ -23,7 +24,7 @@ export const transferMap: { configKey: InjectField, injectKey: string }[] = [
   },
 ]
 
-export function injectPropsToUI(renderJson: { [k: string]: InstanceInfo }, config: any = {}) {
+export function injectPropsToUI(renderJson: RenderJson, config: any = {}) {
   const result = _cloneDeep(renderJson);
 
   // 遍历每个实例
