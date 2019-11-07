@@ -1,14 +1,11 @@
+import { addInjectToEditor } from '@/utils/gaea';
+
 export class Props {
   public editSetting = {
     key: 'images-carousel',
     name: 'ImagesCarousel',
     editors: [
-      'Inject',
-      {
-        type: 'string',
-        field: 'dataSource',
-        text: 'DataSource',
-      },
+      ...addInjectToEditor(['dataSource']),
       'Function',
       {
         type: 'array',
