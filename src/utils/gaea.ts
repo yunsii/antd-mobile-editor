@@ -46,7 +46,7 @@ export function injectPropsToUI(renderJson: RenderJson, config: any = {}) {
       _set(value, 'data.props', newProps);
     }
   });
-  console.log(result);
+  // console.log(result);
   return result;
 }
 

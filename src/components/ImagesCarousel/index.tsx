@@ -9,7 +9,7 @@ export default (props: {
     images,
   } = props;
 
-  const renderImage = (src) => (
+  const renderImage = (src: string) => (
     <div
       key={src}
       className={styles.imageWrapper}

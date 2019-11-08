@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { List, Toast, InputItem, Picker } from 'antd-mobile';
-import { Button } from '@/components/CustomAntdMobile';
-import { CustomButtonProps } from '@/components/CustomAntdMobile/Button';
+import { Button } from '@/components/antd-mobile';
+import { CustomButtonProps } from '@/components/antd-mobile/Button';
 import FormContext, { FormProvider } from './FormContext';
 
 function judgeComponent(type, inputItemProps = {} as any, component, { form, fieldName }: { form: any, fieldName: string }) {

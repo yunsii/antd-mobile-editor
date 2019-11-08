@@ -34,6 +34,10 @@ const pageConfig: InjectProps = {
       label: '价格',
       value: '11.11',
     },
+    {
+      label: '产地',
+      value: '重庆',
+    },
   ]
 }
 
@@ -51,7 +55,7 @@ function GaeaPage(props: GaeaPageProps) {
   useEffect(() => {
     setTimeout(() => {
       setPageProps(pageConfig);
-    }, 2000)
+    }, 800)
   }, []);
 
   // useEffect(() => {
