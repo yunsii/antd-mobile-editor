@@ -5,15 +5,24 @@ export default [
     routes: [
       {
         path: '/',
-        redirect: '/editor',
+        redirect: '/gaea',
       },
       {
-        path: '/editor',
-        component: './Editor',
-      },
-      {
-        path: '/render',
-        component: './Render',
+        path: '/gaea',
+        routes: [
+          {
+            path: '/gaea',
+            component: './Gaea',
+          },
+          {
+            path: '/gaea/editor',
+            component: './Gaea/Editor',
+          },
+          {
+            path: '/gaea/render',
+            component: './Gaea/Render',
+          },
+        ],
       },
       {
         path: '/demo',
@@ -26,7 +35,7 @@ export default [
             path: '/demo/gaea-page',
             component: './Demo/GaeaPage',
           },
-        ]
+        ],
       },
       {
         component: './404',

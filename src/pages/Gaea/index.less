@@ -1,0 +1,37 @@
+@import '~antd-mobile/lib/style/themes/default.less';
+
+.container {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+}
+
+.part {
+	position: relative;
+	width: 50vw;
+	height: 100vh;
+	overflow: auto;
+	font-size: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	color: white;
+
+	&:hover {
+		text-shadow: 2px 2px 4px @fill-mask;
+	}
+}
+
+.partLeft {
+	border-right: 2px solid @border-color-base;
+	background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+		linear-gradient(127deg, rgba(0, 255, 0, .8), rgba(0, 255, 0, 0) 70.71%),
+		linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.partRight {
+	background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+}
+
