@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Render from 'gaea-render';
-import { ActivityIndicator } from 'antd-mobile';
+import GaeaInjectionRender from 'gaea-injection-render';
 import CustomIcon from '@/components/CustomIcon';
 import { Div, SimpleCard } from '@/gaea-components/container';
 import { ImagesCarousel } from '@/gaea-components/data-container';
@@ -48,30 +47,17 @@ export interface GaeaPageProps {
 function GaeaPage(props: GaeaPageProps) {
   const { getData = () => { } } = props;
   const [pageProps, setPageProps] = useState();
-  const [renderRef, setRenderRef] = useState();
 
   getData(renderJson, pageConfig);
 
   useEffect(() => {
     setTimeout(() => {
       setPageProps(pageConfig);
-    }, 800)
+    }, 1800)
   }, []);
 
-  // useEffect(() => {
-  //   if (renderRef) {
-  //     console.log('call forceUpdate');
-  //     renderRef.forceUpdate();
-  //   }
-  // }, [pageProps, renderRef])
-
-
-  if (!pageProps) {
-    return <ActivityIndicator toast animating />
-  }
-
   return (
-    <Render
+    <GaeaInjectionRender
       componentClasses={[
         Button,
         Descriptions,
@@ -82,9 +68,6 @@ function GaeaPage(props: GaeaPageProps) {
         WhiteSpace,
       ]}
       value={injectPropsToUI(renderJson, pageProps)}
-      ref={ref => {
-        setRenderRef(ref);
-      }}
     />
   )
 }
