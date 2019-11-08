@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import withRouter from 'umi/withRouter';
-import { Location } from 'history';
 import Operations, { DimensionTypes } from './Operations';
 import InjectFieldsView from './InjectFieldsView';
 import styles from './index.less';
 
 import { RenderJson, InjectProps } from '@/defines/inject';
 
-export interface RenderPageProps {
-  location: Location;
-}
-
-function RenderPage(props: RenderPageProps) {
+export default () => {
   const [selected, setSelected] = useState<DimensionTypes>('iphone678');
   const [pageProps, setPageProps] = useState({});
   const [renderJson, setRenderJson] = useState<{ [k: string]: InstanceInfo }>({});
@@ -51,5 +45,3 @@ function RenderPage(props: RenderPageProps) {
     </div>
   )
 }
-
-export default withRouter(RenderPage)
