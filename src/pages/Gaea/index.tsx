@@ -1,5 +1,4 @@
 import React from 'react';
-import Redirect from 'umi/redirect';
 import router from 'umi/router';
 import classNames from 'classnames';
 import styles from './index.less';
@@ -11,13 +10,7 @@ interface Props {
 }
 
 export default (props: Props) => {
-  const gaeaDefaultPath = localStorage.getItem('gaeaDefaultPath');
-  if (gaeaDefaultPath) {
-    return <Redirect to={{ pathname: gaeaDefaultPath }} />
-  }
-
   const handleClick = (path) => {
-    localStorage.setItem('gaeaDefaultPath', path);
     router.push(path);
   }
 
