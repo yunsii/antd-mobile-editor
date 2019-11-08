@@ -5,6 +5,10 @@ export default [
     routes: [
       {
         path: '/',
+        redirect: '/editor',
+      },
+      {
+        path: '/editor',
         component: './Editor',
       },
       {
@@ -15,16 +19,12 @@ export default [
         path: '/demo',
         routes: [
           {
-            path: '/demo/standard-list',
-            component: './Demo/StandardList',
+            path: '/demo',
+            redirect: '/demo/gaea-page',
           },
           {
-            path: '/demo/form',
-            component: './Demo/Form',
-          },
-          {
-            path: '/demo/amap',
-            component: './Demo/AMap',
+            path: '/demo/gaea-page',
+            component: './Demo/GaeaPage',
           },
         ]
       },
