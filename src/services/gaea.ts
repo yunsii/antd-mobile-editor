@@ -7,17 +7,17 @@ export interface ErrorResponse {
 
 export interface GetRenderJsonsResponse { data: string[] }
 export async function getRenderJsons(): Promise<GetRenderJsonsResponse | ErrorResponse> {
-  return request(`/gaea-jsons`);
+  return request(`/gaea/jsons`);
 }
 
 export interface GetRenderJsonResponse { data: RenderJson }
 export async function getRenderJson(name: string): Promise<GetRenderJsonResponse | ErrorResponse> {
-  return request(`/get/gaea-json/${name}`);
+  return request(`/gaea/get-json/${name}`);
 }
 
 export interface SaveRenderJsonResponse { data: string }
 export async function saveRenderJson(name: string, renderJson: any): Promise<SaveRenderJsonResponse | ErrorResponse> {
-  return request(`/save/gaea-json/${name}`, {
+  return request(`/gaea/save-json/${name}`, {
     method: 'POST',
     data: { renderJson },
   });

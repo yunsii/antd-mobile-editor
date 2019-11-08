@@ -3,7 +3,7 @@ import fs from 'fs';
 const relativeJsonsPath = '/src/assets/gaea-json';
 
 export default {
-  'GET /gaea-jsons': (req, res) => {
+  'GET /gaea/jsons': (req, res) => {
     fs.readdir(`${process.cwd()}${relativeJsonsPath}`, (err, files) => {
       if (err) {
         res.send({
@@ -13,7 +13,6 @@ export default {
       } else {
         const result: string[] = [];
         files.forEach((file) => {
-          console.log(file);
           result.push(file);
         });
         res.send({
@@ -24,7 +23,7 @@ export default {
     });
   },
 
-  'GET /get/gaea-json/:name': (req, res) => {
+  'GET /gaea/get-json/:name': (req, res) => {
     const { name } = req.params;
     const relativePath = `${relativeJsonsPath}/${name}`;
     const readPath = `${process.cwd()}${relativePath}`.replace(/\\/g, '/');
@@ -42,7 +41,7 @@ export default {
     }
   },
 
-  'POST /save/gaea-json/:name': (req, res) => {
+  'POST /gaea/save-json/:name': (req, res) => {
     const { name }: { name: string } = req.params;
     const { renderJson } = req.body;
     const relativePath = `${relativeJsonsPath}/${name}${name.endsWith('.json') ? '' : '.json'}`;
