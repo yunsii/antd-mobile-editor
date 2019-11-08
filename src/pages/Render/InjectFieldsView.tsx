@@ -24,10 +24,10 @@ function LayoutPage(props: LayoutPageProps) {
   if (noRenderJson || isEmptyRenderJson || noInjectProps || isEmptyInjectProps) {
     let result: any[] = [];
     if (noRenderJson || isEmptyRenderJson) {
-      result.push(<CustomResult title={`renderJson ${noRenderJson ? '未配置' : '为空'}`} />);
+      result.push(<CustomResult key='noRenderJson' title={`renderJson ${noRenderJson ? '未配置' : '为空'}`} />);
     }
     if (noInjectProps || isEmptyInjectProps) {
-      result.push(<CustomResult title={`injectProps ${noInjectProps ? '未配置' : '为空'}`} />);
+      result.push(<CustomResult key='noInjectProps' title={`injectProps ${noInjectProps ? '未配置' : '为空'}`} />);
     }
     return result as any;
   }
