@@ -17,8 +17,8 @@
 
 ## 使用说明
 
-* [gaea-injection-editor](https://github.com/theprimone/antd-mobile-editor)
-* [gaea-injection-render](https://github.com/theprimone/antd-mobile-render)
+* [gaea-injection-editor](https://github.com/theprimone/gaea-injection-editor)
+* [gaea-injection-render](https://github.com/theprimone/gaea-injection-render)
 
 基于 [gaea-editor](https://github.com/ascoders/gaea-editor) 和 [gaea-render](https://github.com/ascoders/gaea-render) 改造为通过属性注入的方式实现 UI 设计和业务逻辑的开发。
 
