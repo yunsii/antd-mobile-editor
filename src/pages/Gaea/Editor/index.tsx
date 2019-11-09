@@ -6,13 +6,10 @@ import {
 } from '@/services/gaea';
 // import BasicComponents from 'gaea-basic-components';
 import { PopupModal } from '@/components/antd-mobile/Modal'
-import { Div, SimpleCard } from '@/gaea-components/container';
-import { ImagesCarousel } from '@/gaea-components/data-container';
-import { Descriptions } from '@/gaea-components/display';
-import { WhiteSpace, Button, Grid } from '@/gaea-components/antd-mobile';
 import { GetJsonModal, MessageModal } from '@/components/gaea';
 import { RenderJson } from '@/defines/inject';
 import SwitchPlugin from './SwitchPlugin';
+import { componentClasses } from '@/gaea-components';
 
 export default () => {
   const [saveVisible, setSaveVisible] = useState(false);
@@ -48,19 +45,11 @@ export default () => {
   ]
 
   return (
-    <div style={{ width: '100vw', height: '100vh' }}>
+    <div className='format-gaea-render' style={{ width: '100vw', height: '100vh' }}>
       {Object.keys(renderJson).length ? (
         <Editor
           plugins={plugins}
-          componentClasses={[
-            Button,
-            Descriptions,
-            Div,
-            Grid,
-            ImagesCarousel,
-            SimpleCard,
-            WhiteSpace,
-          ]}
+          componentClasses={componentClasses}
           onSave={async (value) => {
             console.log(value);
             setSaveVisible(true);

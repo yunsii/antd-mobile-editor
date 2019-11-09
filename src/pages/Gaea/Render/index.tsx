@@ -32,7 +32,7 @@ export default () => {
             onDimensionSelect={onSelect}
             getCurrentComponent={setPageComponent}
           />
-          <div className={classNames(styles.window, styles[selected])}>
+          <div className={classNames(styles.window, styles[selected], 'format-gaea-render')}>
             {pageComponent ? React.cloneElement(pageComponent, {
               getData: (json: RenderJson, pageProps: InjectProps) => {
                 setRenderJson(json);
