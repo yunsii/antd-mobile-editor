@@ -10,11 +10,7 @@
       }
     },
     "childs": [
-      "gaea_instance_15411b2c",
-      "gaea_instance_3fa3dc97",
-      "gaea_instance_c2dfe5e6",
-      "gaea_instance_ae6a1df2",
-      "gaea_instance_b703aab1"
+      "gaea_instance_fff89cf7"
     ],
     "parentInstanceKey": null
   },
@@ -28,15 +24,7 @@
       }
     },
     "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
-  },
-  "gaea_instance_3fa3dc97": {
-    "gaeaKey": "white-space",
-    "data": {
-      "props": {}
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
+    "parentInstanceKey": "gaea_instance_fff89cf7"
   },
   "gaea_instance_c2dfe5e6": {
     "gaeaKey": "grid",
@@ -57,15 +45,7 @@
       "events": []
     },
     "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
-  },
-  "gaea_instance_ae6a1df2": {
-    "gaeaKey": "white-space",
-    "data": {
-      "props": {}
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
+    "parentInstanceKey": "gaea_instance_fff89cf7"
   },
   "gaea_instance_b703aab1": {
     "gaeaKey": "simple-card",
@@ -73,9 +53,10 @@
       "props": {}
     },
     "childs": [
-      "gaea_instance_588f015e"
+      "gaea_instance_588f015e",
+      "gaea_instance_40cdfa40"
     ],
-    "parentInstanceKey": "gaea_instance_75add38a"
+    "parentInstanceKey": "gaea_instance_fff89cf7"
   },
   "gaea_instance_588f015e": {
     "gaeaKey": "descriptions",
@@ -88,6 +69,49 @@
           }
         ],
         "dataSource": "商品信息"
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_b703aab1"
+  },
+  "gaea_instance_fff89cf7": {
+    "gaeaKey": "page-wrapper",
+    "data": {
+      "props": {}
+    },
+    "childs": [
+      "gaea_instance_15411b2c",
+      "gaea_instance_63742693",
+      "gaea_instance_c2dfe5e6",
+      "gaea_instance_48fa4f25",
+      "gaea_instance_b703aab1"
+    ],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_48fa4f25": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_fff89cf7"
+  },
+  "gaea_instance_63742693": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_fff89cf7"
+  },
+  "gaea_instance_40cdfa40": {
+    "gaeaKey": "button",
+    "data": {
+      "props": {
+        "activeStyle": {},
+        "style": {},
+        "text": "打开模态框",
+        "handleClick": "handleOpenModal"
       }
     },
     "childs": [],
