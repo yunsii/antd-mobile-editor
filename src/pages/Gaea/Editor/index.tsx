@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Editor from 'gaea-editor';
+import Editor from 'gaea-injection-editor';
 import { List, InputItem } from 'antd-mobile';
 import {
   saveRenderJson,
@@ -47,7 +47,6 @@ export default () => {
     },
   ]
 
-  console.log(renderJson)
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       {Object.keys(renderJson).length ? (
@@ -68,11 +67,15 @@ export default () => {
             setRenderJson(value);
           }}
           defaultValue={renderJson}
+          layout={{
+            showDragMenu: true,
+            defaultViewMode: 'Iphone6/7/8',
+          }}
         />
       ) : null}
       <GetJsonModal
         pickerVisible={pickerVisible}
-        onClose={() => {setPickerVisible(false)}}
+        onClose={() => { setPickerVisible(false) }}
         preSelectJsonName={saveName}
         getJson={(fileName, json) => {
           setSaveName(fileName);
