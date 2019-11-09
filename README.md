@@ -14,11 +14,17 @@
 ![render.png](https://i.loli.net/2019/11/09/PnsjFfKDavOeUbQ.png)
 
 <p align="center">业务逻辑页面</p>
+
 ## 使用说明
+
+* [gaea-injection-editor](https://github.com/theprimone/antd-mobile-editor)
+* [gaea-injection-render](https://github.com/theprimone/antd-mobile-render)
+
+基于 [gaea-editor](https://github.com/ascoders/gaea-editor) 和 [gaea-render](https://github.com/ascoders/gaea-render) 改造为通过属性注入的方式实现 UI 设计和业务逻辑的开发。
 
 ### UI 配置
 
-根据 [gaea-editor](https://github.com/ascoders/gaea-editor#add-custom-component-to-the-drag-menu) 说明开发组件。该项目组织方式为在 `/components` 开发原始组件，在 `/gaea-components` 下配置对应组件在编辑器中可配置的相关属性。
+根据 [gaea-editor](https://github.com/ascoders/gaea-editor#add-custom-component-to-the-drag-menu) 说明开发组件。本项目组织方式为在 `/components` 开发原始组件，在 `/gaea-components` 下配置对应组件在编辑器中可配置的相关属性。
 
 ### 页面开发
 
