@@ -1,0 +1,114 @@
+{
+  "gaea_instance_75add38a": {
+    "gaeaKey": "gaea-container",
+    "data": {
+      "props": {
+        "style": {
+          "display": "block",
+          "height": "100%"
+        }
+      }
+    },
+    "childs": [
+      "gaea_instance_15411b2c",
+      "gaea_instance_3fa3dc97",
+      "gaea_instance_c2dfe5e6",
+      "gaea_instance_ae6a1df2",
+      "gaea_instance_b703aab1",
+      "gaea_instance_78ca80ca",
+      "gaea_instance_da9cbc77"
+    ],
+    "parentInstanceKey": null
+  },
+  "gaea_instance_15411b2c": {
+    "gaeaKey": "images-carousel",
+    "data": {
+      "props": {
+        "images": [
+          "https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png"
+        ]
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_3fa3dc97": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_c2dfe5e6": {
+    "gaeaKey": "grid",
+    "data": {
+      "props": {
+        "data": [
+          {
+            "text": "name",
+            "icon": "https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png"
+          }
+        ],
+        "dataSource": "menus",
+        "handleClick": "handleMenusClick",
+        "square": false,
+        "hasLine": false,
+        "dataLoading": "menusLoading"
+      },
+      "events": []
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_ae6a1df2": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_b703aab1": {
+    "gaeaKey": "simple-card",
+    "data": {
+      "props": {}
+    },
+    "childs": [
+      "gaea_instance_588f015e"
+    ],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_588f015e": {
+    "gaeaKey": "descriptions",
+    "data": {
+      "props": {
+        "data": [
+          {
+            "label": "Lable",
+            "value": "Value"
+          }
+        ],
+        "dataSource": "商品信息"
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_b703aab1"
+  },
+  "gaea_instance_78ca80ca": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_da9cbc77": {
+    "gaeaKey": "simple-card",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  }
+}
