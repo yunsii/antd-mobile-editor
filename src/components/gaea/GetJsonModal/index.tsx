@@ -9,14 +9,15 @@ import MessageModal from '../MessageModal';
 import { RenderJson } from '@/defines/inject';
 
 export interface GetJsonModalProps {
+  pickerVisible: boolean;
+  onClose: () => void;
   preSelectJsonName?: string;
   getJson: (fileName: string, json: RenderJson) => void;
 }
 
 export default (props: GetJsonModalProps) => {
-  const { preSelectJsonName, getJson } = props;
+  const { preSelectJsonName, getJson, pickerVisible, onClose } = props;
   const [allJson, setAllJson] = useState<string[]>([]);
-  const [pickerVisible, setPickerVisible] = useState(true);
   const [selectJsonName, setSelectJsonName] = useState<string[]>([]);
 
   const [messageVisible, setMessageVisible] = useState(false);
@@ -41,14 +42,16 @@ export default (props: GetJsonModalProps) => {
         setMessageVisible(true);
       }
     }
-    getJsons();
-  }, []);
+    if (pickerVisible) {
+      getJsons();
+    }
+  }, [pickerVisible]);
 
   const handleGetJson = async () => {
     const response = await getRenderJson(selectJsonName[0]);
     if (response['data']) {
       getJson(selectJsonName[0], response['data']);
-      setPickerVisible(false);
+      onClose();
     } else {
       setTitle('失败');
       setMessage(response['message']);
@@ -60,13 +63,15 @@ export default (props: GetJsonModalProps) => {
     <PopupModal
       visible={pickerVisible}
       title='选择页面'
-      onClose={() => setPickerVisible(false)}
+      onClose={onClose}
       footer={[
         {
           text: '确定',
           onPress: handleGetJson,
         }
       ]}
+      maskClosable={false}
+      closable={false}
     >
       <PickerView
         data={allJson.map(item => ({ label: item, value: item }))}
