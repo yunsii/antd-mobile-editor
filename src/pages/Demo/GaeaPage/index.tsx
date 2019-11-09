@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import GaeaInjectionRender from 'gaea-injection-render';
 import CustomIcon from '@/components/CustomIcon';
-import { Div, SimpleCard } from '@/gaea-components/container';
-import { ImagesCarousel } from '@/gaea-components/data-container';
-import { Descriptions } from '@/gaea-components/display';
-import { WhiteSpace, Button, Grid } from '@/gaea-components/antd-mobile';
+import { SlideUpModal } from '@/components/antd-mobile/Modal';
 import { injectPropsToUI } from '@/utils/gaea';
 import { InjectProps } from '@/defines/inject';
 import renderJson from '@/assets/gaea-json/gaeaPage.json';
+import { componentClasses } from '@/gaea-components';
 
 const pageConfig: InjectProps = {
   menus: [
@@ -46,29 +44,37 @@ export interface GaeaPageProps {
 
 function GaeaPage(props: GaeaPageProps) {
   const { getData = () => { } } = props;
-  const [pageProps, setPageProps] = useState();
+  const [pageProps, setPageProps] = useState({});
+  const [visible, setVisible] = useState(false);
 
-  getData(renderJson, pageConfig);
+  getData(renderJson, pageProps);
 
   useEffect(() => {
     setTimeout(() => {
-      setPageProps(pageConfig);
-    }, 1800)
+      setPageProps({
+        ...pageConfig,
+        handleOpenModal: () => {
+          setVisible(true);
+        }
+      });
+    }, 1800);
   }, []);
 
   return (
-    <GaeaInjectionRender
-      componentClasses={[
-        Button,
-        Descriptions,
-        Div,
-        Grid,
-        ImagesCarousel,
-        SimpleCard,
-        WhiteSpace,
-      ]}
-      value={injectPropsToUI(renderJson, pageProps)}
-    />
+    <>
+      <GaeaInjectionRender
+        componentClasses={componentClasses}
+        value={injectPropsToUI(renderJson, pageProps)}
+      />
+      <SlideUpModal
+        visible={visible}
+        onClose={() => setVisible(false)}
+      >
+        <p>
+          Hello, world.
+        </p>
+      </SlideUpModal>
+    </>
   )
 }
 
