@@ -12,11 +12,13 @@ import { Descriptions } from '@/gaea-components/display';
 import { WhiteSpace, Button, Grid } from '@/gaea-components/antd-mobile';
 import { GetJsonModal, MessageModal } from '@/components/gaea';
 import { RenderJson } from '@/defines/inject';
+import SwitchPlugin from './SwitchPlugin';
 
 export default () => {
   const [saveVisible, setSaveVisible] = useState(false);
   const [saveName, setSaveName] = useState('');
-  const [renderJson, setRenderJson] = useState<RenderJson>({})
+  const [renderJson, setRenderJson] = useState<RenderJson>({});
+  const [pickerVisible, setPickerVisible] = useState<boolean>(true);
 
   const [messageVisible, setMessageVisible] = useState(false);
   const [title, setTitle] = useState();
@@ -30,10 +32,27 @@ export default () => {
     setMessageVisible(true);
   }
 
+  const plugins = [
+    {
+      position: 'navbarRight',
+      class: () => (
+        <SwitchPlugin
+          currentPage={saveName}
+          onClick={() => {
+            setRenderJson({});
+            setPickerVisible(true);
+          }}
+        />
+      ),
+    },
+  ]
+
+  console.log(renderJson)
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       {Object.keys(renderJson).length ? (
         <Editor
+          plugins={plugins}
           componentClasses={[
             Button,
             Descriptions,
@@ -52,6 +71,8 @@ export default () => {
         />
       ) : null}
       <GetJsonModal
+        pickerVisible={pickerVisible}
+        onClose={() => {setPickerVisible(false)}}
         preSelectJsonName={saveName}
         getJson={(fileName, json) => {
           setSaveName(fileName);
