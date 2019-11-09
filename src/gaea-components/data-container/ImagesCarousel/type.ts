@@ -18,7 +18,7 @@ export class Props {
     ],
   };
 
-  public images: ImagesCarouselData = ['https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png'];
+  public images: ImagesCarouselData = ['https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png', 'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png'];
 }
 
 export class State { }

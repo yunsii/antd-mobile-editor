@@ -12,7 +12,7 @@ export interface LayoutPageProps {
 }
 
 function LayoutPage(props: LayoutPageProps) {
-  const { renderJson, injectProps } = props;
+  const { renderJson = {}, injectProps = {} } = props;
   const injectFields: string[] = [];
   const allInjectFields = transferMap.map(item => item.configKey);
 
