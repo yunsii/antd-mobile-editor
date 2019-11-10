@@ -1,26 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'umi/link';
 import styles from './Operations.less';
-import GaeaPage from '@/pages/Demo/GaeaPage';
-import Form from '@/pages/Demo/Form';
 
 const pagesData = [
   {
     name: 'GaeaPage',
-    component: <GaeaPage />,
-  },
-  {
-    name: 'Form',
-    component: <Form />,
+    path: '/demo/gaea-page',
   },
 ]
-
-function getTargetComponent(name) {
-  const target = pagesData.find(item => item.name === name);
-  if (target) {
-    return target.component;
-  }
-  return null;
-}
 
 export type DimensionTypes = 'iphone678' | 'iphoneX' | 'ipad';
 
@@ -33,22 +20,21 @@ const dimensionMap: { [k in DimensionTypes]: string } = {
 interface Props {
   selectedDimension: string;
   onDimensionSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  getCurrentComponent: (component: JSX.Element) => void;
+  getCurrentPath: (path: string) => void;
 }
 
 export default (props: Props) => {
-  const { selectedDimension, onDimensionSelect, getCurrentComponent } = props;
+  const { selectedDimension, onDimensionSelect, getCurrentPath = () => { } } = props;
   const [defaultRenderPage, setDefaultRenderPage] = useState();
 
+
   useEffect(() => {
-    if (localStorage.getItem('defaultRenderPage')) {
-      setDefaultRenderPage(localStorage.getItem('defaultRenderPage'));
-      const target = getTargetComponent(localStorage.getItem('defaultRenderPage'));
-      if (target) {
-        getCurrentComponent(target);
-      }
-    }
+    const path = localStorage.getItem('defaultRenderPage') || pagesData[0].path;
+    setDefaultRenderPage(path);
+    getCurrentPath(path);
   }, [])
+
+  console.log(defaultRenderPage);
 
   return (
     <div className={styles.operations}>
@@ -64,18 +50,17 @@ export default (props: Props) => {
         className={styles.select}
         value={defaultRenderPage}
         onChange={(event) => {
+          console.log(event.target.value);
           setDefaultRenderPage(event.target.value);
           localStorage.setItem('defaultRenderPage', event.target.value);
-          const target = getTargetComponent(event.target.value);
-          if (target) {
-            getCurrentComponent(target);
-          }
+          getCurrentPath(event.target.value);
         }}
       >
         {pagesData.map(item => {
-          return <option key={item.name} value={item.name}>{item.name}</option>;
+          return <option key={item.name} value={item.path}>{item.name}</option>;
         })}
       </select>
+      <Link to={defaultRenderPage || '/'}>GO</Link>
     </div>
   );
 }

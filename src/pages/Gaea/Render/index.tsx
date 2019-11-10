@@ -1,44 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import Operations, { DimensionTypes } from './Operations';
-import InjectFieldsView from './InjectFieldsView';
 import styles from './index.less';
-
-import { RenderJson, InjectProps } from '@/defines/inject';
 
 export default () => {
   const [selected, setSelected] = useState<DimensionTypes>('iphone678');
-  const [pageProps, setPageProps] = useState({});
-  const [renderJson, setRenderJson] = useState<{ [k: string]: InstanceInfo }>({});
-
-  const [pageComponent, setPageComponent] = useState();
-
-  useEffect(() => {
-    setRenderJson({});
-    setPageProps({});
-  }, [pageComponent])
+  const [pagePath, setPagePath] = useState();
 
   const onSelect = (event: any) => { setSelected(event.target.value) };
 
+  console.log(pagePath);
   return (
     <div className={styles.container}>
       <div style={{ display: 'flex' }}>
-        <div className={classNames(styles.part, styles.partLeft)}>
-          <InjectFieldsView renderJson={renderJson} injectProps={pageProps} />
-        </div>
-        <div className={classNames(styles.part, styles.partRight)}>
+        <div className={classNames(styles.body)}>
           <Operations
             selectedDimension={selected}
             onDimensionSelect={onSelect}
-            getCurrentComponent={setPageComponent}
+            getCurrentPath={setPagePath}
           />
-          <div className={classNames(styles.window, styles[selected], 'format-gaea-render')}>
-            {pageComponent ? React.cloneElement(pageComponent, {
-              getData: (json: RenderJson, pageProps: InjectProps) => {
-                setRenderJson(json);
-                setPageProps(pageProps);
-              }
-            }) : null}
+          <div className={classNames(styles.window, styles[selected])}>
+            <iframe
+              src={pagePath}
+              style={{ width: '100%', height: 'calc(100% - 5px)', border: 'unset' }}
+            />
           </div>
         </div>
       </div>

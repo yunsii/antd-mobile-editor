@@ -7,12 +7,6 @@
 	justify-content: center;
 }
 
-.part {
-	position: relative;
-	height: 100vh;
-	overflow: auto;
-}
-
 .operations {
 	position: absolute;
 	top: 0;
@@ -30,13 +24,8 @@
 	margin-left: 20 * @hd;
 }
 
-.partLeft {
-	width: 30vw;
-	border-right: 2px solid @border-color-base;
-}
-
-.partRight {
-	width: 70vw;
+.body {
+	width: 100vw;
 }
 
 .window {
@@ -44,33 +33,19 @@
 	box-shadow: 0 0 16 * @hd 4 * @hd rgba(0, 0, 0, 0.1);
 	transition: all .5s;
 	overflow: auto;
-	cursor: url('/dot-circle-o.png'), pointer;
-
-	&::-webkit-scrollbar {
-		color: red;
-		width: 3px;
-		height: 100vh;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: #bfbfbf;
-	}
 }
 
 .iphone678 {
 	width: 375 * @hd;
 	height: 667 * @hd;
-	max-height: 667 * @hd;
 }
 
 .iphoneX {
 	width: 375 * @hd;
 	height: 812 * @hd;
-	max-height: 812 * @hd;
 }
 
 .ipad {
 	width: 768 * @hd;
 	height: 1024 * @hd;
-	max-height: 1024 * @hd;
 }
