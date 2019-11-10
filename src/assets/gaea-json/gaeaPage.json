@@ -10,7 +10,11 @@
       }
     },
     "childs": [
-      "gaea_instance_fff89cf7"
+      "gaea_instance_fff89cf7",
+      "gaea_instance_08fd6093",
+      "gaea_instance_a8310b05",
+      "gaea_instance_bea401e8",
+      "gaea_instance_0aa08e4f"
     ],
     "parentInstanceKey": null
   },
@@ -116,5 +120,37 @@
     },
     "childs": [],
     "parentInstanceKey": "gaea_instance_b703aab1"
+  },
+  "gaea_instance_a8310b05": {
+    "gaeaKey": "simple-card",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_08fd6093": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_bea401e8": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
+  },
+  "gaea_instance_0aa08e4f": {
+    "gaeaKey": "simple-card",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_75add38a"
   }
 }
