@@ -28,6 +28,7 @@
     "react-amap-plugin-custom-geolocation": "^1.0.1",
     "react-dom": "^16.8.6",
     "react-transition-group": "^4.2.2",
+    "swr": "^0.1.9",
     "umi-request": "^1.2.2"
   },
   "devDependencies": {
