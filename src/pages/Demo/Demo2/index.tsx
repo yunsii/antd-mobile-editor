@@ -4,8 +4,8 @@ import CustomIcon from '@/components/CustomIcon';
 import { SlideUpModal } from '@/components/antd-mobile/Modal';
 import { injectPropsToUI } from '@/utils/gaea';
 import { InjectProps } from '@/defines/inject';
-import renderJson from '@/assets/gaea-json/gaeaPage.json';
 import { componentClasses } from '@/gaea-components';
+import renderJson from '@/renderJson';
 
 const pageConfig: InjectProps = {
   menus: [
@@ -38,16 +38,11 @@ const pageConfig: InjectProps = {
   ]
 }
 
-export interface GaeaPageProps {
-  getData?: (renderJson: { [k: string]: InstanceInfo }, pageProps: any) => void;
-}
+export interface GaeaPageProps { }
 
 function GaeaPage(props: GaeaPageProps) {
-  const { getData = () => { } } = props;
   const [pageProps, setPageProps] = useState({});
   const [visible, setVisible] = useState(false);
-
-  getData(renderJson, pageProps);
 
   useEffect(() => {
     setTimeout(() => {
@@ -64,7 +59,7 @@ function GaeaPage(props: GaeaPageProps) {
     <>
       <GaeaInjectionRender
         componentClasses={componentClasses}
-        value={injectPropsToUI(renderJson, pageProps)}
+        value={injectPropsToUI(renderJson.demo2.json, pageProps)}
       />
       <SlideUpModal
         visible={visible}

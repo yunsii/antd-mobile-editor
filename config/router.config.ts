@@ -32,8 +32,12 @@ export default [
             redirect: '/demo/gaea-page',
           },
           {
-            path: '/demo/gaea-page',
-            component: './Demo/GaeaPage',
+            path: '/demo/1',
+            component: './Demo/Demo1',
+          },
+          {
+            path: '/demo/2',
+            component: './Demo/Demo2',
           },
         ],
       },
