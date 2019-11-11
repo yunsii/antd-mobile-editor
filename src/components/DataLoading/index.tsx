@@ -27,13 +27,13 @@ export const CustomResult: React.FC<ResultProps> = ({...props}) => {
   return <Result style={{ border: 'unset' }} {...props} />
 }
 
-export interface AsyncRenderProps<T = any> extends React.PropsWithoutRef<React.Props<T>> {
+export interface DataLoadingProps<T = any> extends React.PropsWithoutRef<React.Props<T>> {
   loading: boolean;
   data: T | T[];
   children: any;
 }
 
-export function DataLoading<T>({ loading, data, children }: AsyncRenderProps<T>): React.ReactElement {
+export function DataLoading<T>({ loading, data, children }: DataLoadingProps<T>): React.ReactElement {
   if (loading) {
     return <CustomResult message={<Loading />} />;
   }
