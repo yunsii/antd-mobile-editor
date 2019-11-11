@@ -36,14 +36,11 @@ export default (props: Props) => {
   const { selectedDimension, onDimensionSelect, getCurrentPathAndJson = () => { } } = props;
   const [defaultRenderPath, setDefaultRenderPage] = useState();
 
-
   useEffect(() => {
     const path = localStorage.getItem('defaultRenderPath') || renderJson[Object.keys(renderJson)[0]].path;
     setDefaultRenderPage(path);
     getCurrentPathAndJson(path, _get(getTargetData(path), 'json') || {});
   }, [])
-
-  console.log(defaultRenderPath);
 
   return (
     <div className={styles.operations}>
