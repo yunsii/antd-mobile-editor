@@ -10,25 +10,9 @@
       }
     },
     "childs": [
-      "gaea_instance_fff89cf7",
-      "gaea_instance_08fd6093",
-      "gaea_instance_a8310b05",
-      "gaea_instance_bea401e8",
-      "gaea_instance_0aa08e4f"
+      "gaea_instance_fff89cf7"
     ],
     "parentInstanceKey": null
-  },
-  "gaea_instance_15411b2c": {
-    "gaeaKey": "images-carousel",
-    "data": {
-      "props": {
-        "images": [
-          "https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png"
-        ]
-      }
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_fff89cf7"
   },
   "gaea_instance_c2dfe5e6": {
     "gaeaKey": "grid",
@@ -44,7 +28,7 @@
         "handleClick": "handleMenusClick",
         "square": false,
         "hasLine": false,
-        "dataLoading": "menusLoading"
+        "dataLoading": ""
       },
       "events": []
     },
@@ -57,26 +41,10 @@
       "props": {}
     },
     "childs": [
-      "gaea_instance_588f015e",
+      "gaea_instance_d40aa610",
       "gaea_instance_40cdfa40"
     ],
     "parentInstanceKey": "gaea_instance_fff89cf7"
-  },
-  "gaea_instance_588f015e": {
-    "gaeaKey": "descriptions",
-    "data": {
-      "props": {
-        "data": [
-          {
-            "label": "Lable",
-            "value": "Value"
-          }
-        ],
-        "dataSource": "商品信息"
-      }
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_b703aab1"
   },
   "gaea_instance_fff89cf7": {
     "gaeaKey": "page-wrapper",
@@ -84,7 +52,7 @@
       "props": {}
     },
     "childs": [
-      "gaea_instance_15411b2c",
+      "gaea_instance_8966c08c",
       "gaea_instance_63742693",
       "gaea_instance_c2dfe5e6",
       "gaea_instance_48fa4f25",
@@ -121,36 +89,33 @@
     "childs": [],
     "parentInstanceKey": "gaea_instance_b703aab1"
   },
-  "gaea_instance_a8310b05": {
-    "gaeaKey": "simple-card",
+  "gaea_instance_d40aa610": {
+    "gaeaKey": "descriptions",
     "data": {
-      "props": {}
+      "props": {
+        "data": [
+          {
+            "label": "-",
+            "value": "-"
+          }
+        ],
+        "dataSource": "项目信息"
+      }
     },
     "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
+    "parentInstanceKey": "gaea_instance_b703aab1"
   },
-  "gaea_instance_08fd6093": {
-    "gaeaKey": "white-space",
+  "gaea_instance_8966c08c": {
+    "gaeaKey": "images-carousel",
     "data": {
-      "props": {}
+      "props": {
+        "images": [
+          "https://avatars2.githubusercontent.com/u/18096089?s=400&u=ac70c17caf8cb7e48d0a4f8b8ef28825688cbb8d&v=4",
+          "https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png"
+        ]
+      }
     },
     "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
-  },
-  "gaea_instance_bea401e8": {
-    "gaeaKey": "white-space",
-    "data": {
-      "props": {}
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
-  },
-  "gaea_instance_0aa08e4f": {
-    "gaeaKey": "simple-card",
-    "data": {
-      "props": {}
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_75add38a"
+    "parentInstanceKey": "gaea_instance_fff89cf7"
   }
 }
