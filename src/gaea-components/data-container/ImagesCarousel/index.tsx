@@ -1,5 +1,6 @@
 import React from 'react';
 import ImagesCarousel from '@/components/ImagesCarousel';
+import DataLoading from '@/components/DataLoading';
 import { Props, State } from './type';
 
 export default class extends React.Component<Props, State> {
@@ -7,12 +8,14 @@ export default class extends React.Component<Props, State> {
   public state = new State();
 
   public render() {
-    const { images } = this.props;
+    const { data, loading } = this.props;
 
     return (
-      <ImagesCarousel 
-        images={images}
-      />
+      <DataLoading loading={loading} data={data}>
+        <ImagesCarousel
+          images={data}
+        />
+      </DataLoading>
     )
   }
 }
