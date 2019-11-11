@@ -59,4 +59,22 @@ export default {
       });
     }
   },
+
+  'DELETE /gaea/save-json/:name': (req, res) => {
+    const { name }: { name: string } = req.params;
+    const relativePath = `${relativeJsonsPath}/${name}${name.endsWith('.json') ? '' : '.json'}`;
+    const savePath = `${process.cwd()}${relativePath}`.replace(/\\/g, '/');
+    try {
+      fs.unlinkSync(savePath);
+      res.send({
+        status: 'ok',
+        data: relativePath,
+      });
+    } catch (err) {
+      res.send({
+        status: 'error',
+        message: err.message,
+      });
+    }
+  },
 };

@@ -22,3 +22,10 @@ export async function saveRenderJson(name: string, renderJson: any): Promise<Sav
     data: { renderJson },
   });
 }
+
+export interface DeleteRenderJsonResponse { data: string }
+export async function deleteRenderJson(name: string): Promise<DeleteRenderJsonResponse | ErrorResponse> {
+  return request(`/gaea/save-json/${name}`, {
+    method: 'DELETE',
+  });
+}
