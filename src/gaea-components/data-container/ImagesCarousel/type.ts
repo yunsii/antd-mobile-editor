@@ -7,7 +7,7 @@ export class Props {
     key: 'images-carousel',
     name: 'ImagesCarousel - 图片轮播',
     editors: [
-      ...addInjectToEditor(['dataSource']),
+      ...addInjectToEditor(['dataSource', 'dataLoading']),
       'Function',
       {
         type: 'array',
@@ -18,7 +18,8 @@ export class Props {
     ],
   };
 
-  public images: ImagesCarouselData = ['https://avatars2.githubusercontent.com/u/18096089?s=400&u=ac70c17caf8cb7e48d0a4f8b8ef28825688cbb8d&v=4', 'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png'];
+  public data: ImagesCarouselData = [];
+  public loading: boolean = false;
 }
 
 export class State { }
