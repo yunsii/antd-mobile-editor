@@ -40,10 +40,24 @@
 }
 
 .window {
+	position: relative;
 	margin: 80 * @hd auto;
 	box-shadow: 0 0 16 * @hd 4 * @hd rgba(0, 0, 0, 0.1);
 	transition: all .5s;
 	overflow: auto;
+}
+
+.toolBar {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.refresh {
+	&:hover {
+		background-color: @fill-tap;
+		border-radius: 4 * @hd;
+	}
 }
 
 .iphone678 {
