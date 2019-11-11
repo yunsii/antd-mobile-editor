@@ -9,7 +9,7 @@ import { RenderJson } from '@/defines/inject';
 
 export type InjectField = 'dataSource' | 'dataLoading' | 'handleClick';
 
-export const transferMap: { configKey: InjectField, injectKey: string }[] = [
+export const injectionMap: { configKey: InjectField, injectKey: string }[] = [
   {
     configKey: 'dataSource',
     injectKey: 'data',
@@ -31,7 +31,7 @@ export function injectPropsToUI(renderJson: RenderJson, config: any = {}) {
   _forOwn(result, (value, key) => {
     const props = _get(value, 'data.props') || {};
     // 从 config 中取出需要注入该实例的属性或方法
-    const injectData = transferMap.map(item => ({ ...item, inject: config[props[item.configKey]] })).filter(item => item.inject);
+    const injectData = injectionMap.map(item => ({ ...item, inject: config[props[item.configKey]] })).filter(item => item.inject);
     if (injectData.length) {
       let newProps = { ...props };
       // 注入该实例配置的数据或方法
@@ -51,7 +51,7 @@ export function injectPropsToUI(renderJson: RenderJson, config: any = {}) {
 }
 
 export function addInjectToEditor(fields?: InjectField[]) {
-  const configProperties = transferMap.map(item => {
+  const configProperties = injectionMap.map(item => {
     return {
       type: 'string',
       field: item.configKey,

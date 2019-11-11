@@ -3,7 +3,7 @@ import { List, Icon } from 'antd-mobile';
 import _get from 'lodash/get';
 import _forOwn from 'lodash/forOwn';
 import { CustomResult } from '@/components/DataLoading';
-import { transferMap, InjectField } from '@/utils/gaea';
+import { injectionMap, InjectField } from '@/utils/gaea';
 import styles from './InjectFieldsView.less'
 
 export interface LayoutPageProps {
@@ -13,7 +13,7 @@ export interface LayoutPageProps {
 function LayoutPage(props: LayoutPageProps) {
   const { pageJson = {} } = props;
   const injectFields: string[] = [];
-  const allInjectFields = transferMap.map(item => item.configKey);
+  const allInjectFields = injectionMap.map(item => item.configKey);
 
   const noRenderJson = !pageJson;
   const isEmptyRenderJson = !Object.keys(pageJson).length;
