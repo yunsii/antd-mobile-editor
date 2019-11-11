@@ -38,11 +38,11 @@
             "icon": "https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png"
           }
         ],
-        "dataSource": "menus",
-        "handleClick": "handleMenusClick",
+        "dataSource": "menuData",
+        "handleClick": "handleMenuClick",
         "square": false,
         "hasLine": false,
-        "dataLoading": "menusLoading"
+        "dataLoading": "menuLoading"
       },
       "events": []
     },

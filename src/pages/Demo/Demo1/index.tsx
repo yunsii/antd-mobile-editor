@@ -11,7 +11,7 @@ import { componentClasses } from '@/gaea-components';
 import renderJson from '@/renderJson';
 
 const pageConfig: InjectProps = {
-  menus: [
+  menuData: [
     {
       text: '菜单一',
       icon: <CustomIcon type='empty' />,
@@ -21,7 +21,7 @@ const pageConfig: InjectProps = {
       icon: <CustomIcon type='empty' />,
     },
   ],
-  handleMenusClick: (item) => {
+  handleMenuClick: (item) => {
     console.log(item);
   },
 }
