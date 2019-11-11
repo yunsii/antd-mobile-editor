@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'umi/link';
+import _get from 'lodash/get';
+import renderJson from '@/renderJson';
 import styles from './Operations.less';
 
-const pagesData = [
-  {
-    name: 'GaeaPage',
-    path: '/demo/gaea-page',
-  },
-]
+function getTargetData(path: string) {
+  let result = {};
+  Object.keys(renderJson).forEach(item => {
+    if (renderJson[item].path === path) {
+      result = {
+        name: item,
+        path: path,
+        json: renderJson[item].json,
+      }
+    }
+  })
+  return result;
+}
 
 export type DimensionTypes = 'iphone678' | 'iphoneX' | 'ipad';
 
@@ -20,21 +28,21 @@ const dimensionMap: { [k in DimensionTypes]: string } = {
 interface Props {
   selectedDimension: string;
   onDimensionSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  getCurrentPath: (path: string) => void;
+  getCurrentPathAndJson: (path: string, json: any) => void;
 }
 
 export default (props: Props) => {
-  const { selectedDimension, onDimensionSelect, getCurrentPath = () => { } } = props;
-  const [defaultRenderPage, setDefaultRenderPage] = useState();
+  const { selectedDimension, onDimensionSelect, getCurrentPathAndJson = () => { } } = props;
+  const [defaultRenderPath, setDefaultRenderPage] = useState();
 
 
   useEffect(() => {
-    const path = localStorage.getItem('defaultRenderPage') || pagesData[0].path;
+    const path = localStorage.getItem('defaultRenderPath') || renderJson[Object.keys(renderJson)[0]].path;
     setDefaultRenderPage(path);
-    getCurrentPath(path);
+    getCurrentPathAndJson(path, _get(getTargetData(path), 'json') || {});
   }, [])
 
-  console.log(defaultRenderPage);
+  console.log(defaultRenderPath);
 
   return (
     <div className={styles.operations}>
@@ -48,19 +56,17 @@ export default (props: Props) => {
       </p>
       <select
         className={styles.select}
-        value={defaultRenderPage}
+        value={defaultRenderPath}
         onChange={(event) => {
-          console.log(event.target.value);
           setDefaultRenderPage(event.target.value);
-          localStorage.setItem('defaultRenderPage', event.target.value);
-          getCurrentPath(event.target.value);
+          localStorage.setItem('defaultRenderPath', event.target.value);
+          getCurrentPathAndJson(event.target.value, _get(getTargetData(event.target.value), 'json') || {});
         }}
       >
-        {pagesData.map(item => {
-          return <option key={item.name} value={item.path}>{item.name}</option>;
+        {Object.keys(renderJson).map(item => {
+          return <option key={item} value={renderJson[item].path}>{item}</option>;
         })}
       </select>
-      <Link to={defaultRenderPage || '/'}>GO</Link>
     </div>
   );
 }
