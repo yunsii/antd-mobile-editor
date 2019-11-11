@@ -44,7 +44,7 @@
 
 #### 举例说明
 
-在 `gaea-components` 中的 [`Gird`](/src/gaea-components/antd-mobile/Grid/type.ts) 组件添加可配置属性：
+在 `gaea-components` 中的 [`Gird`](/src/gaea-components/antd-mobile/Grid/type.ts) 组件中调用 [`addInjectToEditor()`](/src/utils/gaea.ts#L53) 添加可配置属性。
 
 ```ts
 import { addInjectToEditor } from '@/utils/gaea';
@@ -53,13 +53,13 @@ public editSetting = {
   key: 'grid',
   name: 'Grid',
   editors: [
-    addInjectToEditor(),  // 添加所以可注入属性配置
+    addInjectToEditor(),  // 添加所有可注入属性配置
     // ...
   ],
 };
 ```
 
-在编辑器中将 `dataSource` 配置为 `'menus'`，将 `handleClick` 配置为 `'onMenusClick'`。
+在编辑器中将 `dataSource` 配置为 `'menuData'`，将 `handleClick` 配置为 `'handleMenuClick'`。
 
 页面渲染时调用 `injectPropsToUI(renderJson, config)` 将注入数据和回调事件，如下将 `pageConfig` 注入到 `renderJson` 中即可。
 
@@ -69,7 +69,7 @@ import { Grid } from '@/gaea-components/antd-mobile';
 import { injectPropsToUI } from '@/utils/gaea';
 
 const pageConfig = {
-  menus: [
+  menuData: [
     {
       text: '菜单一',
       icon: <CustomIcon type='empty' />,
@@ -79,7 +79,7 @@ const pageConfig = {
       icon: <CustomIcon type='empty' />,
     },
   ],
-  handleMenusClick: (item) => {
+  handleMenuClick: (item) => {
     console.log(item);
   },
 }
