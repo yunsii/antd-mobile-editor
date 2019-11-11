@@ -10,7 +10,7 @@
       }
     },
     "childs": [
-      "gaea_instance_fdb6b48c",
+      "gaea_instance_32f09cf6",
       "gaea_instance_3fa3dc97",
       "gaea_instance_c2dfe5e6",
       "gaea_instance_ae6a1df2",
@@ -99,14 +99,12 @@
     "childs": [],
     "parentInstanceKey": "gaea_instance_75add38a"
   },
-  "gaea_instance_fdb6b48c": {
+  "gaea_instance_32f09cf6": {
     "gaeaKey": "images-carousel",
     "data": {
       "props": {
-        "images": [
-          "https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png",
-          "https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png"
-        ]
+        "images": [],
+        "dataSource": "images"
       }
     },
     "childs": [],

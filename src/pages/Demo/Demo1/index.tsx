@@ -11,6 +11,10 @@ import { componentClasses } from '@/gaea-components';
 import renderJson from '@/renderJson';
 
 const pageConfig: InjectProps = {
+  images: [
+    'https://avatars2.githubusercontent.com/u/18096089?s=400&u=ac70c17caf8cb7e48d0a4f8b8ef28825688cbb8d&v=4',
+    'https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png',
+  ],
   menuData: [
     {
       text: '菜单一',
@@ -45,6 +49,8 @@ function GaeaPage(props: GaeaPageProps) {
       });
     }
   }, [data]);
+
+  console.log(pageProps);
 
   return (
     <>
