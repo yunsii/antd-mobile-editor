@@ -1,10 +1,7 @@
 import React from 'react';
-import { PopupModal } from '@/components/antd-mobile/Modal'
+import { PopupModal, CustomModalProps } from '@/components/antd-mobile/Modal'
 
-export interface MessageModalProps {
-  visible: boolean;
-  onClose: () => void;
-  title: string;
+export interface MessageModalProps extends Omit<CustomModalProps, 'children'> {
   message: string;
 }
 
