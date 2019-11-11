@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import GaeaInjectionRender from 'gaea-injection-render';
+import InjectionRender from 'gaea-injection-render';
 import { ActivityIndicator } from 'antd-mobile';
 import useSWR from 'swr';
 import { getProjectInfo } from '@/services/demo';
@@ -48,7 +48,7 @@ function GaeaPage(props: GaeaPageProps) {
 
   return (
     <>
-      <GaeaInjectionRender
+      <InjectionRender
         componentClasses={componentClasses}
         value={injectPropsToUI(renderJson.demo1.json, pageProps)}
       />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import GaeaInjectionRender from 'gaea-injection-render';
+import InjectionRender from 'gaea-injection-render';
 import CustomIcon from '@/components/CustomIcon';
 import { SlideUpModal } from '@/components/antd-mobile/Modal';
 import { injectPropsToUI } from '@/utils/gaea';
@@ -57,7 +57,7 @@ function GaeaPage(props: GaeaPageProps) {
 
   return (
     <>
-      <GaeaInjectionRender
+      <InjectionRender
         componentClasses={componentClasses}
         value={injectPropsToUI(renderJson.demo2.json, pageProps)}
       />
