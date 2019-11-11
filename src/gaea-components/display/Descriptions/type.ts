@@ -66,7 +66,7 @@ export class Props {
     ],
   };
 
-  public data: DescriptionsData = [{ label: 'Lable', value: 'Value' }];
+  public data: DescriptionsData = [{ label: '-', value: '-' }];
   public labelAlign: React.CSSProperties['textAlign'] = 'end';
   public valueAlign: React.CSSProperties['textAlign'] = 'unset';
   public labelFlex: number = 1;
