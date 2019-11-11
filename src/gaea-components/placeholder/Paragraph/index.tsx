@@ -3,6 +3,6 @@ import styles from './index.less';
 
 export default function () {
   return (
-    <p className={styles.text}>Placeholder</p>
+    <p className={styles.text}>-</p>
   )
 }
