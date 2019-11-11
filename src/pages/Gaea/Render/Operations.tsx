@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import _get from 'lodash/get';
+import _upperFirst from 'lodash/upperFirst';
 import renderJson from '@/renderJson';
 import styles from './Operations.less';
 
@@ -64,7 +65,7 @@ export default (props: Props) => {
         }}
       >
         {Object.keys(renderJson).map(item => {
-          return <option key={item} value={renderJson[item].path}>{item}</option>;
+          return <option key={item} value={renderJson[item].path}>{_upperFirst(item)}</option>;
         })}
       </select>
     </div>
