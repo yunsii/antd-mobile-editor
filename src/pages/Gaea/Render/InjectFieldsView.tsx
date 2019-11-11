@@ -30,7 +30,7 @@ function LayoutPage(props: LayoutPageProps) {
   _forOwn(pageJson, (value, key) => {
     const props = _get(value, 'data.props') || {};
     _forOwn(props, (propValue, propKey) => {
-      if (allInjectFields.includes(propKey as InjectField) && propValue) {
+      if (allInjectFields.includes(propKey as InjectField) && propValue && !injectFields.includes(propValue)) {
         injectFields.push(propValue);
       }
     })
