@@ -6,6 +6,15 @@ export default class Container extends React.Component<Props, State> {
   public state = new State();
 
   public render() {
-    return <div style={{ backgroundColor: '#f5f5f9', ...this.props.style }}>{this.props.children}</div>;
+    const { style, children } = this.props;
+    const minHeightStyle = {
+      minHeight: Array.isArray(children) && children.length ? 'unset' : style.minHeight
+    }
+    console.log(children);
+    return (
+      <div style={{ ...style, ...minHeightStyle }}>
+        {children}
+      </div>
+    );
   }
 }
