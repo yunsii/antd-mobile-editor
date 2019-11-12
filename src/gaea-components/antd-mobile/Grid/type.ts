@@ -55,9 +55,7 @@ export class Props {
     ],
   };
 
-  public data: GirdData = [{
-    text: 'name', icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png'
-  }];
+  public data: GirdData = [];
   public columnNum: number = 4;
   public hasLine: boolean = true;
   public isCarousel: boolean = false;
