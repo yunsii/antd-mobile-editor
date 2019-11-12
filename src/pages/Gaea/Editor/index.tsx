@@ -123,7 +123,7 @@ export default () => {
             setPageMode('save');
             setRenderJson(value);
           }}
-          defaultValue={renderJson}
+          defaultValue={Object.keys(renderJson).length ? renderJson : undefined}
           layout={{
             showDragMenu: true,
             defaultViewMode: 'Iphone6/7/8',
@@ -169,7 +169,7 @@ export default () => {
             onPress: () => {
               if (pageModeFooterTextMap[pageMode] === '继续') {
                 setPickerVisible(true);
-              } 
+              }
               setMessageVisible(false);
             }
           }
