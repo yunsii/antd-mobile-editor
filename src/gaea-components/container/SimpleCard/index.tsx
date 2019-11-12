@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleCard } from '@/components/Container';
+import SimpleCard from '@/components/SimpleCard';
 import { Paragraph } from '@/gaea-components/placeholder';
 import { Props, State } from './type';
 
