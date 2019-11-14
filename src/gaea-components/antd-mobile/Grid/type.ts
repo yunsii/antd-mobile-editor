@@ -5,6 +5,8 @@ export type GirdData = {
   icon: any;
 }[];
 
+export type HandleGridClick = (item: any) => void
+
 export class Props {
   public editSetting = {
     key: 'grid',
@@ -62,9 +64,7 @@ export class Props {
   public carouselMaxRow: number = 2;
   public square: boolean = true;
   public loading: boolean = false;
-  public onClick = () => {
-    //
-  };
+  public onClick: HandleGridClick = () => { };
 }
 
 export class State { }
