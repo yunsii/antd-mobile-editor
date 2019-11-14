@@ -1,4 +1,4 @@
-import { addInjectToEditor } from '@/utils/gaea';
+import { addFormInjectToEditor } from '@/utils/gaea';
 import { FormItem } from '@/components/Form';
 
 export type SetFormItems = (form: any) => FormItem[]
@@ -8,7 +8,7 @@ export class Props {
     key: 'form',
     name: 'Form - 表单',
     editors: [
-      ...addInjectToEditor(['handleFormItems', 'handleSubmit']),
+      ...addFormInjectToEditor(),
       'Function',
       {
         type: 'string',
