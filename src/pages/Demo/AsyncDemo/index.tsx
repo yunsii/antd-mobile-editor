@@ -33,7 +33,7 @@ const pageConfig: InjectProps = {
 export interface GaeaPageProps { }
 
 function GaeaPage(props: GaeaPageProps) {
-  const [pageProps, setPageProps] = useState({});
+  const [pageProps, setPageProps] = useState(pageConfig);
   const [visible, setVisible] = useState(false);
 
   const { data, error } = useSWR('12', getProjectInfo);
