@@ -1,6 +1,7 @@
 import React from 'react';
 import { createForm } from 'rc-form';
 import Form from '@/components/Form';
+import { FormConsumer } from './FormContext';
 import { Props, State } from './type';
 
 function FormComponent({
@@ -9,7 +10,7 @@ function FormComponent({
   buttonText,
   setFormItems,
   onSubmit,
-}) {
+}: any) {
   return (
     <Form
       form={form}
@@ -29,7 +30,15 @@ export default class extends React.Component<Props, State> {
 
   public render() {
     return (
-      <WrappedForm {...this.props} />
+      <FormConsumer>
+        {form => {
+          if (form) {
+            return <FormComponent form={form} {...this.props} />
+          } else {
+            return <WrappedForm {...this.props} />
+          }
+        }}
+      </FormConsumer>
     )
   }
 }
