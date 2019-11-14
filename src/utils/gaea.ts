@@ -7,7 +7,12 @@ import _isUndefined from 'lodash/isUndefined';
 import _upperFirst from 'lodash/upperFirst';
 import { RenderJson } from '@/defines/inject';
 
-export type InjectField = 'dataSource' | 'dataLoading' | 'handleClick';
+export type InjectField =
+  | 'dataSource'
+  | 'dataLoading'
+  | 'handleClick'
+  | 'handleFormItems'
+  | 'handleSubmit'
 
 export const injectionMap: { configKey: InjectField, injectKey: string }[] = [
   {
@@ -21,6 +26,14 @@ export const injectionMap: { configKey: InjectField, injectKey: string }[] = [
   {
     configKey: 'handleClick',
     injectKey: 'onClick',
+  },
+  {
+    configKey: 'handleFormItems',
+    injectKey: 'setFormItems',
+  },
+  {
+    configKey: 'handleSubmit',
+    injectKey: 'onSubmit',
   },
 ]
 
