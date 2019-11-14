@@ -30,7 +30,7 @@ export default () => {
           />
           <div className={classNames(styles.window, styles[selected])}>
             <iframe
-              key={iframeKey}
+              key={`${pagePath}${iframeKey}`}
               src={pagePath}
               style={{ width: '100%', height: 'calc(100% - 5px)', border: 'unset' }}
             />
