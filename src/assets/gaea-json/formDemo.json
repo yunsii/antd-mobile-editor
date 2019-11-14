@@ -34,7 +34,8 @@
       "props": {
         "header": "个人信息",
         "handleFormItems": "setFormItemsForPersonalInfo",
-        "handleSubmit": "onSubmitPersonalInfo"
+        "handleSubmit": "onSubmitPersonalInfo",
+        "buttonText": ""
       }
     },
     "childs": [],
