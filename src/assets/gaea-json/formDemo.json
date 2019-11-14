@@ -1,0 +1,63 @@
+{
+  "gaea_instance_908c32ff": {
+    "gaeaKey": "gaea-container",
+    "data": {
+      "props": {
+        "style": {
+          "display": "block",
+          "height": "100%"
+        }
+      }
+    },
+    "childs": [
+      "gaea_instance_46f45c4a",
+      "gaea_instance_1cb4024b",
+      "gaea_instance_def2e976",
+      "gaea_instance_9300bb2c"
+    ],
+    "parentInstanceKey": null
+  },
+  "gaea_instance_46f45c4a": {
+    "gaeaKey": "page-wrapper",
+    "data": {
+      "props": {
+        "backable": false,
+        "title": "表单"
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_908c32ff"
+  },
+  "gaea_instance_1cb4024b": {
+    "gaeaKey": "form",
+    "data": {
+      "props": {
+        "header": "个人信息",
+        "handleFormItems": "setFormItemsForPersonalInfo",
+        "handleSubmit": "onSubmitPersonalInfo"
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_908c32ff"
+  },
+  "gaea_instance_def2e976": {
+    "gaeaKey": "white-space",
+    "data": {
+      "props": {}
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_908c32ff"
+  },
+  "gaea_instance_9300bb2c": {
+    "gaeaKey": "form",
+    "data": {
+      "props": {
+        "header": "个人简介",
+        "handleFormItems": "setFormItemsForPersonalIntro",
+        "handleSubmit": "onSubmitPersonalIntro"
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_908c32ff"
+  }
+}

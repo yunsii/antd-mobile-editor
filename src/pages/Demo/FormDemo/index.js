@@ -1,8 +1,10 @@
 import React from 'react';
+import InjectionRender from 'gaea-injection-render';
 import { List, Switch, TextareaItem } from 'antd-mobile';
 import { createForm } from 'rc-form';
-import PageWrapper from '@/components/PageWrapper';
-import Form from '@/components/Form';
+import { injectPropsToUI } from '@/utils/gaea';
+import { componentClasses } from '@/gaea-components';
+import renderJson from '@/renderJson';
 
 const gender = [
   {
@@ -15,29 +17,24 @@ const gender = [
   },
 ]
 
-const setBasicItems = (form) => {
+const setFormItemsForPersonalInfo = (form) => {
   const { getFieldProps } = form;
   return [
     {
-      fieldName: 'name',
-      inputItemProps: {
-        label: '姓名'
-      },
+      label: '姓名',
+      field: 'name',
       fieldProps: {
         rules: [
           {
             required: true, message: '请输入姓名',
           }
         ],
-      }
+      },
     },
     {
       type: 'picker',
-      fieldName: 'gender',
-      inputItemProps: {
-        label: '性别',
-        data: gender,
-      },
+      label: '性别',
+      field: 'gender',
       fieldProps: {
         rules: [
           {
@@ -45,10 +42,13 @@ const setBasicItems = (form) => {
           }
         ],
       },
+      componentProps: {
+        data: gender,
+      },
     },
     {
       type: 'custom',
-      fieldName: 'confirm',
+      field: 'confirm',
       component: (
         <List.Item
           extra={<Switch {...getFieldProps('confirm', { initialValue: true, valuePropName: 'checked' })} />}
@@ -60,12 +60,12 @@ const setBasicItems = (form) => {
   ];
 }
 
-const setAdvancedItems = (form) => {
+const setFormItemsForPersonalIntro = (form) => {
   const { getFieldProps } = form;
   return [
     {
       type: 'custom',
-      fieldName: 'confirm',
+      field: 'confirm',
       component: (
         <TextareaItem
           {...getFieldProps('intro', {
@@ -81,23 +81,23 @@ const setAdvancedItems = (form) => {
 
 class FormDemo extends React.PureComponent {
   render() {
-    const { form } = this.props;
+    const pageProps = {
+      setFormItemsForPersonalInfo,
+      onSubmitPersonalInfo: (fieldsValue) => {
+        console.log('个人信息', fieldsValue);
+      },
+      setFormItemsForPersonalIntro,
+      onSubmitPersonalInfo: (fieldsValue) => {
+        console.log('个人简介', fieldsValue);
+      },
+    }
     return (
-      <PageWrapper title='表单' backable>
-        <Form
-          form={form}
-          header="个人信息"
-          items={setBasicItems(form)}
-        />
-        <Form
-          form={form}
-          header="个人简介"
-          items={setAdvancedItems(form)}
-          onSubmit={values => console.log(values)}
-        />
-      </PageWrapper>
+      <InjectionRender
+        componentClasses={componentClasses}
+        value={injectPropsToUI(renderJson.formDemo.json, pageProps)}
+      />
     );
   }
 }
 
-export default createForm()(FormDemo);
+export default FormDemo;

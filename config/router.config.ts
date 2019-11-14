@@ -29,15 +29,15 @@ export default [
         routes: [
           {
             path: '/demo',
-            redirect: '/demo/gaea-page',
+            redirect: '/demo/async',
           },
           {
-            path: '/demo/1',
-            component: './Demo/Demo1',
+            path: '/demo/async',
+            component: './Demo/AsyncDemo',
           },
           {
-            path: '/demo/2',
-            component: './Demo/Demo2',
+            path: '/demo/form',
+            component: './Demo/FormDemo',
           },
         ],
       },

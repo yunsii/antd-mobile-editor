@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import InjectionRender from 'gaea-injection-render';
+import { ActivityIndicator } from 'antd-mobile';
+import useSWR from 'swr';
+import { getProjectInfo } from '@/services/demo';
 import CustomIcon from '@/components/CustomIcon';
 import { SlideUpModal } from '@/components/antd-mobile/Modal';
 import { injectPropsToUI } from '@/utils/gaea';
@@ -22,24 +25,9 @@ const pageConfig: InjectProps = {
       icon: <CustomIcon type='empty' />,
     },
   ],
-  // menusLoading: true,
   handleMenuClick: (item) => {
     console.log(item);
   },
-  商品信息: [
-    {
-      label: '名称',
-      value: '一个商品',
-    },
-    {
-      label: '价格',
-      value: '11.11',
-    },
-    {
-      label: '产地',
-      value: '重庆',
-    },
-  ]
 }
 
 export interface GaeaPageProps { }
@@ -48,22 +36,27 @@ function GaeaPage(props: GaeaPageProps) {
   const [pageProps, setPageProps] = useState({});
   const [visible, setVisible] = useState(false);
 
+  const { data, error } = useSWR('12', getProjectInfo);
+
   useEffect(() => {
-    setTimeout(() => {
+    if (data) {
       setPageProps({
         ...pageConfig,
         handleOpenModal: () => {
           setVisible(true);
-        }
+        },
+        项目信息: data.data,
       });
-    }, 1800);
-  }, []);
+    }
+  }, [data]);
+
+  console.log(pageProps);
 
   return (
     <>
       <InjectionRender
         componentClasses={componentClasses}
-        value={injectPropsToUI(renderJson.demo2.json, pageProps)}
+        value={injectPropsToUI(renderJson.asyncDemo.json, pageProps)}
       />
       <SlideUpModal
         visible={visible}
@@ -73,6 +66,7 @@ function GaeaPage(props: GaeaPageProps) {
           Hello, world.
         </p>
       </SlideUpModal>
+      <ActivityIndicator toast animating={!data} />
     </>
   )
 }

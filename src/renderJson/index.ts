@@ -1,13 +1,13 @@
-import demo1Json from '@/assets/gaea-json/demo1.json';
-import demo2Json from '@/assets/gaea-json/demo2.json';
+import asyncDemo from '@/assets/gaea-json/asyncDemo.json';
+import formDemo from '@/assets/gaea-json/formDemo.json';
 
 export default {
-  demo1: {
-    path: '/demo/1',
-    json: demo1Json,
+  asyncDemo: {
+    path: '/demo/async',
+    json: asyncDemo,
   },
-  demo2: {
-    path: '/demo/2',
-    json: demo2Json,
+  formDemo: {
+    path: '/demo/form',
+    json: formDemo,
   },
 }

@@ -14,27 +14,6 @@
     ],
     "parentInstanceKey": null
   },
-  "gaea_instance_c2dfe5e6": {
-    "gaeaKey": "grid",
-    "data": {
-      "props": {
-        "data": [
-          {
-            "text": "name",
-            "icon": "https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png"
-          }
-        ],
-        "dataSource": "menuData",
-        "handleClick": "handleMenuClick",
-        "square": false,
-        "hasLine": false,
-        "dataLoading": ""
-      },
-      "events": []
-    },
-    "childs": [],
-    "parentInstanceKey": "gaea_instance_fff89cf7"
-  },
   "gaea_instance_b703aab1": {
     "gaeaKey": "simple-card",
     "data": {
@@ -54,7 +33,7 @@
     "childs": [
       "gaea_instance_d3c9833e",
       "gaea_instance_63742693",
-      "gaea_instance_c2dfe5e6",
+      "gaea_instance_0f88cd61",
       "gaea_instance_48fa4f25",
       "gaea_instance_b703aab1"
     ],
@@ -111,6 +90,18 @@
       "props": {
         "images": [],
         "dataSource": "images"
+      }
+    },
+    "childs": [],
+    "parentInstanceKey": "gaea_instance_fff89cf7"
+  },
+  "gaea_instance_0f88cd61": {
+    "gaeaKey": "grid",
+    "data": {
+      "props": {
+        "data": [],
+        "dataSource": "menuData",
+        "handleClick": "handleMenuClick"
       }
     },
     "childs": [],
