@@ -2,8 +2,9 @@ import React from 'react';
 import InjectionRender from 'gaea-injection-render';
 import { List, Switch, TextareaItem } from 'antd-mobile';
 import { createForm } from 'rc-form';
-import { injectPropsToUI } from '@/utils/gaea';
 import { componentClasses } from '@/gaea-components';
+import { FormProvider } from '@/gaea-components/data-container/Form/FormContext';
+import { injectPropsToUI } from '@/utils/gaea';
 import renderJson from '@/renderJson';
 
 const gender = [
@@ -79,25 +80,33 @@ const setFormItemsForPersonalIntro = (form) => {
   ];
 }
 
-class FormDemo extends React.PureComponent {
+export interface FormDemoProps {
+  form: any;
+}
+class FormDemo extends React.PureComponent<FormDemoProps> {
   render() {
+    const { form } = this.props;
+
     const pageProps = {
       setFormItemsForPersonalInfo,
       onSubmitPersonalInfo: (fieldsValue) => {
         console.log('个人信息', fieldsValue);
       },
       setFormItemsForPersonalIntro,
-      onSubmitPersonalInfo: (fieldsValue) => {
+      onSubmitPersonalIntro: (fieldsValue) => {
         console.log('个人简介', fieldsValue);
       },
     }
+
     return (
-      <InjectionRender
-        componentClasses={componentClasses}
-        value={injectPropsToUI(renderJson.formDemo.json, pageProps)}
-      />
+      <FormProvider value={form}>
+        <InjectionRender
+          componentClasses={componentClasses}
+          value={injectPropsToUI(renderJson.formDemo.json, pageProps)}
+        />
+      </FormProvider>
     );
   }
 }
 
-export default FormDemo;
+export default createForm()(FormDemo);
