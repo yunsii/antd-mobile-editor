@@ -12,7 +12,7 @@ export default class Container extends React.Component<Props, State> {
     }
     console.log(children);
     return (
-      <div style={{ ...style, ...minHeightStyle }}>
+      <div style={{ backgroundColor: '#f5f5f9', ...minHeightStyle, ...style, }}>
         {children}
       </div>
     );
