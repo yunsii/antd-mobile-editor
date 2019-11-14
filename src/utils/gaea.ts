@@ -77,3 +77,19 @@ export function addInjectToEditor(fields?: InjectField[]) {
     ...configProperties.filter(item => fields ? fields.includes(item.field) : true)
   ]
 }
+
+/**
+ * return 'dataSource', 'dataLoading', 'handleClick'
+ */
+export function addDataInjectToEditor() {
+  return addInjectToEditor(['dataSource', 'dataLoading', 'handleClick']);
+}
+
+/**
+ * return 'handleFormItems', 'handleSubmit'
+ */
+export function addFormInjectToEditor() {
+  return addInjectToEditor(['handleFormItems', 'handleSubmit']);
+}
+
+
