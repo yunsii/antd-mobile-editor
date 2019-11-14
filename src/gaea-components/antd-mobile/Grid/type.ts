@@ -1,4 +1,4 @@
-import { addInjectToEditor } from '@/utils/gaea';
+import { addDataInjectToEditor } from '@/utils/gaea';
 
 export type GirdData = {
   text: string;
@@ -12,7 +12,7 @@ export class Props {
     key: 'grid',
     name: 'Grid - 宫格',
     editors: [
-      ...addInjectToEditor(),
+      ...addDataInjectToEditor(),
       'Function',
       {
         type: 'array',
