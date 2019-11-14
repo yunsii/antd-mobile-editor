@@ -10,7 +10,6 @@ export default class Container extends React.Component<Props, State> {
     const minHeightStyle = {
       minHeight: Array.isArray(children) && children.length ? 'unset' : style.minHeight
     }
-    console.log(children);
     return (
       <div style={{ backgroundColor: '#f5f5f9', ...minHeightStyle, ...style, }}>
         {children}
